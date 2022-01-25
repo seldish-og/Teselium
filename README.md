@@ -1,2 +1,2 @@
 # Teselium
-Weba App
+Web App
