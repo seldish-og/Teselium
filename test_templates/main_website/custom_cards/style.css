@@ -29,7 +29,7 @@ body{
 
 .container .card .face.face1{
     position: relative;
-    background: #D4E1F1;
+    background: #070D59;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ body{
 }
 
 .container .card:hover .face.face1{
-    background: #D4E1F1;
+    background: #070D59;
     transform: translateY(0);
 }
 
@@ -58,7 +58,7 @@ body{
 .container .card .face.face1 .content h3{
     margin: 10px 0 0;
     padding: 0;
-    color: #070D59;
+    color: #D4E1F1;
     text-align: center;
     font-size: 1.5em;
 }
