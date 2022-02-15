@@ -10,7 +10,7 @@ body{
 }
 
 .container{
-    width: 1000px;
+    width: 750px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -52,11 +52,11 @@ body{
 }
 
 .container .card .face.face1 .content img{
-    max-width: 100px;
+    max-width: 200px;
 }
 
 .container .card .face.face1 .content h3{
-    margin: 10px 0 0;
+    margin: 0px 0 0;
     padding: 0;
     color: #D4E1F1;
     text-align: center;
