@@ -31,6 +31,8 @@ button {
 
 .navigation_item a {
   color: #070d59;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .button {
