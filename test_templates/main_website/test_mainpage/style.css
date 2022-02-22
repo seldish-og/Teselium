@@ -50,7 +50,7 @@ button {
   margin-inline: 90px;
 }
 
-@media screen and (max-width: 1305px) {
+@media screen and (max-width: 1200px) {
   .header_navigation {
     display: none;
   }
