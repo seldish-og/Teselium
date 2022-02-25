@@ -50,6 +50,17 @@ button {
   margin-inline: 90px;
 }
 
+.head_text {
+  text-align: center;
+  padding: 160px;
+  font-family: Sedan SC;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: 0.095em;
+  color: #070d59;
+  
+}
+
 @media screen and (max-width: 1200px) {
   .header_navigation {
     display: none;
