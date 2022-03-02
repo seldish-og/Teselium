@@ -79,7 +79,7 @@ button {
 }
 
 .container {
-  width: 750px;
+  width: 1000px;
   height: 100px;
   position: relative;
   display: flex;
@@ -127,7 +127,7 @@ button {
 
 .container .card .face.face1 .content h3 {
   margin: 0px 0 0;
-  padding: 0;
+  padding-bottom: 10px;
   color: #d4e1f1;
   text-align: center;
   font-size: 1.5em;
@@ -172,10 +172,19 @@ button {
 /* Block with banks map and text */
 .banks_map {
   padding-top: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.banks_map p{
+  text-align: center;
+  justify-content: center;
+}
+
 .banks_map img {
   display: block;
-  margin-left: 100px;
+  margin-left: 400px;
   margin-right: auto;
   width: 623px;
   height: 441px;
