@@ -1,3 +1,5 @@
+/* deafault properties */
+
 * {
   padding: 0;
   margin: 0;
@@ -16,7 +18,13 @@ button {
   outline: none;
   border: none;
 }
-/* top elements */
+
+.container {
+  margin: 0 auto;
+  max-width: 1060px;
+}
+
+/* header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -67,127 +75,93 @@ button {
   }
 }
 
-/* custom cards */
-.custom_cards {
-  margin: 0;
-  padding: 0;
-  background: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: consolas;
-}
+/* main section */
 
-.container {
-  width: 1200px;
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-}
-
-.container .card {
-  position: relative;
-  cursor: pointer;
-}
-
-.container .card .face {
-  width: 470px;
-  transition: 0.7s;
-}
-
-.container .card .face.face1 {
-  position: relative;
-  background: #070d59;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  height: 258px;
-}
-
-.container .card:hover .face.face1 {
-  background: #070d59;
-  transform: translateY(-154px);
-}
-
-.container .card .face.face1 .content {
-  opacity: 0.2;
-  transition: 0.5s;
-}
-
-.container .card:hover .face.face1 .content {
-  opacity: 1;
-}
-
-.container .card .face.face1 .content img {
-  max-width: 280px;
-}
-
-.container .card .face.face1 .content h3 {
-  margin: 10px 0 0;
-  padding: 0;
-  color: #fff;
+.main_header {
+  font-size: 64px;
   text-align: center;
-  font-size: 1.5em;
+  color: #070d59;
+  margin-top: 146px;
+  font-weight: 100;
+  letter-spacing: 6px;
 }
 
-.container .card .face.face2 {
-  height: 258px;
-  position: relative;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  transform: translateY(-258px);
-}
-
-.container .card:hover .face.face2 {
-  transform: translateY(-154px);
-}
-
-.container .card .face.face2 .content p {
-  margin: 0;
-  padding: 0;
-  font-size: 23px;
-}
-
-.container .card .face.face2 .content a {
-  margin: 15px 0 0;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 900;
-  color: rgb(51, 51, 51);
-  padding: 5px;
-  border: 1px solid #333;
-}
-
-.container .card .face.face2 .content a:hover {
-  background: #333;
-  color: #fff;
-}
-
-/* Block with banks map and text */
-.banks_map {
-  padding-top: 600px;
+.cards {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-top: 165px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 296px;
+  width: 470px;
+}
+
+.face {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #070d59;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: 1s;
 }
 
-.banks_map p {
-  text-align: left;
-  width: 526px;
-  height: 348px;
-  left: 50%;
+.face .face_name {
+  color: #fff;
+  font-size: 48px;
 }
 
-.banks_map img {
-  margin-left: 300px;
-  margin-right: auto;
-  width: 623px;
-  height: 441px;
+.face > * {
+  opacity: 0.6;
+}
+
+.face > * {
+  opacity: 0.6;
+}
+
+.card:hover .face > * {
+  opacity: 1;
+  transition: 1s;
+}
+
+.face img {
+  height: 200px;
+  width: 283px;
+}
+
+.card:hover .face {
+  transform: translateY(-98px);
+  transition: 1s;
+}
+
+.card:hover .content {
+  transform: translateY(187px);
+}
+
+.cards .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+  transform: translateY(0px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.cards .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
