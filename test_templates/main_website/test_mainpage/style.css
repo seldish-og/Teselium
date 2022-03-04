@@ -125,7 +125,8 @@ button {
 }
 
 .face > * {
-  opacity: 0.6;
+  opacity: 0.2;
+  transition: 1s
 }
 
 .card:hover .face > * {
@@ -134,7 +135,7 @@ button {
 }
 
 .face img {
-  height: 200px;
+  height: 220px;
   width: 283px;
 }
 
@@ -162,6 +163,13 @@ button {
 
 .cards .description {
   display: flex;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
+  font-size: 23px;
+  margin: 20px;
+}
+
+.cards .button {
+  color: #fff;
 }
