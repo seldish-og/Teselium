@@ -180,8 +180,36 @@ a:hover .button {
 }
 
 /* Banks map and description */
+.second-container {
+  margin: 0px auto;
+  max-width: 1200px;
+}
 
-.banks_map {
+.banks-map {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 210px;
+  max-height: 500px;
+}
+.banks-map img {
+  width: 623px;
+  height: 441px;
+  left: 351px;
+  top: 1010px;
+}
+.text_bank_map {
+  width: 526px;
+  height: 348px;
+  left: 1072px;
+  top: 1010px;
+}
+.text_bank_map h2 {
+  color: #070d59;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 140%;
+}
+/* .banks_map {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -202,4 +230,4 @@ a:hover .button {
   height: 441px;
   left: 351px;
   top: 1010px;
-}
+} */
