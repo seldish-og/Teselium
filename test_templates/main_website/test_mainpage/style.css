@@ -178,16 +178,28 @@ a:hover .button {
 .cards .button {
   color: #fff;
 }
+
 /* Banks map and description */
+
 .banks_map {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 200px;
 }
-.banks_map p {
-  width: 700px;
+.text_bank_map {
+  display: inline;
+  vertical-align: top;
+  position: absolute;
+  width: 526px;
+  height: 348px;
+  left: 1072px;
+  top: 1010px;
 }
 .banks_map img {
-  width: 600px;
+  position: absolute;
+  width: 623px;
+  height: 441px;
+  left: 351px;
+  top: 1010px;
 }
