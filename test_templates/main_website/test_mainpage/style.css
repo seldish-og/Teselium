@@ -18,10 +18,13 @@ button {
   outline: none;
   border: none;
 }
-
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+  Roboto, 'Helvetica Neue', Arial, Noto Sans, sans-serif;
+}
 .container {
   margin: 0 auto;
-  max-width: 1060px;
+  max-width: 1160px;
 }
 
 /* header */
@@ -41,6 +44,8 @@ button {
   color: #070d59;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 2px;
 }
 .navigation_item:hover a {
   color: #333ba8;
@@ -87,8 +92,8 @@ a:hover .button {
   text-align: center;
   color: #070d59;
   margin-top: 146px;
-  font-weight: 100;
-  letter-spacing: 6px;
+  font-weight: 700;
+  letter-spacing: 4px;
 }
 
 .cards {
