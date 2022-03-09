@@ -152,14 +152,9 @@ body {
 }
 
 .btn {
-  background-color: var(--blue);
-  background-image: linear-gradient(
-    90deg,
-    var(--blue) 0%,
-    var(--lightblue) 74%
-  );
+  background-color: #070d59;
   border-radius: 20px;
-  border: 1px solid var(--blue);
+  border: 1px solid #d4e1f1;
   color: var(--white);
   cursor: pointer;
   font-size: 0.8rem;
