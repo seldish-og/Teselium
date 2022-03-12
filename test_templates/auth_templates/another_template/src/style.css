@@ -1,5 +1,3 @@
-
-
 /* Please ❤ this if you like it! */
 
 
@@ -10,9 +8,12 @@ body{
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 1.7;
-	color: #c4c3ca;
-	background-color: #1f2029;
+	/* color: #000000; */
+	background-color: #D4E1F1;
 	overflow-x: hidden;
+}
+.log-in-color{
+  color: #D4E1F1;
 }
 a {
 	cursor: pointer;
@@ -113,7 +114,7 @@ h6 span{
 .card-front, .card-back {
   width: 100%;
   height: 100%;
-  background-color: #2a2b38;
+  background-color: #070D59;
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -280,14 +281,15 @@ h6 span{
 
 .logo {
 	position: absolute;
-	top: 30px;
-	right: 30px;
-	display: block;
+	top: 10px;
+  align-items: center;
+	/* right: 30px; */
+	display: flex;
+  justify-content: center;
 	z-index: 100;
 	transition: all 250ms linear;
 }
 .logo img {
-	height: 26px;
+	height: auto;
 	width: auto;
-	display: block;
 }
