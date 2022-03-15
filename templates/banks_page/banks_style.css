@@ -85,3 +85,14 @@ a:hover .button {
     display: none;
   }
 }
+
+.main_header {
+  font-size: 60px;
+  text-align: center;
+  color: #070d59;
+  margin-top: 146px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+/* main section */
