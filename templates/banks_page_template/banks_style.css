@@ -54,6 +54,7 @@ body {
   padding: 19px 48px;
   background: #070d59;
   text-transform: uppercase;
+  font-size: 22px;
   border-radius: 19px;
 }
 
@@ -96,7 +97,7 @@ a:hover .button {
 }
 
 /* main banks section */
-.main-banks-section{
+.main-banks-section {
   margin: 0px auto;
   margin-top: 200px;
   max-width: 1200px;
@@ -108,7 +109,7 @@ a:hover .button {
   margin-top: 110px;
   max-height: 500px;
 }
-.card img{
+.card img {
   width: 623px;
   height: 441px;
   left: 351px;
