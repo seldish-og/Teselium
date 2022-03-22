@@ -54,6 +54,7 @@ body {
 }
 .button {
   padding: 19px 48px;
+  font-size: 100%;
   background: #070d59;
   text-transform: uppercase;
   border-radius: 19px;
@@ -85,6 +86,7 @@ a:hover .button {
 @media screen and (max-width: 1200px) {
   .header_navigation {
     display: none;
+    
   }
 }
 
