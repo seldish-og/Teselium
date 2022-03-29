@@ -1,12 +1,32 @@
-from flask import Flask
+import re
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
-@app.route('/index')
+@app.route("/")
 def index():
-    return "gg!"
+    return "main"
+
+
+@app.route("/creators")
+def creators():
+    return "creators"
+
+
+@app.route("/banks")
+def banks():
+    return "banks"
+
+
+@app.route("/debit-card")
+def cards():
+    return "debit cards"
+
+
+@app.route("/credit-card/<args>")
+def credit_cards(args):
+    return "credit cards"
 
 
 if __name__ == '__main__':
