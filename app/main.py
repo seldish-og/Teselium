@@ -26,6 +26,7 @@ def cards():
 
 @app.route("/credit-card/<args>")
 def credit_cards(args):
+    print(args)
     return "credit cards"
 
 
