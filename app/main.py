@@ -1,5 +1,6 @@
 import re
-from flask import Flask, render_template
+from urllib import response
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -9,14 +10,19 @@ def index():
     return "main"
 
 
+@app.route('/auth')
+def auth():
+    return render_template("templates/auth_template/auth_page.html")
+
+
 @app.route("/creators")
 def creators():
-    return "creators"
+    return render_template("templates/creators_template")
 
 
 @app.route("/banks")
 def banks():
-    return "banks"
+    return render_template("templates/banks_template")
 
 
 @app.route("/debit-card")
