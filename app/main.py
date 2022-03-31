@@ -12,17 +12,17 @@ def index():
 
 @app.route('/auth')
 def auth():
-    return render_template("auth_template/auth_page.html")
+    return render_template("auth_page.html")
 
 
 @app.route("/creators")
 def creators():
-    return render_template("templates/creators_template")
+    return "creators"
 
 
 @app.route("/banks")
 def banks():
-    return render_template("templates/banks_template")
+    return "banks"
 
 
 @app.route("/debit-card")

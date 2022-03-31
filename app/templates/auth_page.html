@@ -6,7 +6,7 @@
 	<title>Sign in</title>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
 	<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
-	<link rel="stylesheet" href={{url_for('static', filename='auth_style.css' )}}>
+	<link rel="stylesheet" href={{ url_for('static', filename='auth_style.css' ) }}>
 
 </head>
 
@@ -14,7 +14,7 @@
 	<!-- partial:index.partial.html -->
 	<div class="logo" target="_blank">
 		<a href="../main_page_template/#">
-			<img src="img/logo.png" alt="">
+			<img src={{ url_for('static', filename='img/logo.png' ) }} alt="">
 		</a>
 	</div>
 
