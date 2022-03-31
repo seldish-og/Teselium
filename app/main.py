@@ -2,7 +2,7 @@ import re
 from urllib import response
 from flask import Flask, render_template, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='main_app/templates')
 
 
 @app.route("/")
@@ -12,7 +12,7 @@ def index():
 
 @app.route('/auth')
 def auth():
-    return render_template("templates/auth_template/auth_page.html")
+    return render_template("auth_template/auth_page.html")
 
 
 @app.route("/creators")
