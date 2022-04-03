@@ -12,7 +12,7 @@ def handle_exception(e):
 
 @app.route("/")
 def index():
-    return "main"
+    return render_template("main_templates/main_page.html")
 
 
 @app.route('/auth')
