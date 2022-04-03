@@ -1,14 +1,12 @@
+from turtle import title
 from flask import Flask, render_template, url_for
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 
 
-@app.errorhandler(Exception)
+@app.errorhandler(404)
 def handle_exception(e):
-    if isinstance(e, HTTPException):
-        return e
-
     return render_template("error_page.html", e=e), 500
 
 
@@ -19,7 +17,7 @@ def index():
 
 @app.route('/auth')
 def auth():
-    return render_template("auth_page.html")
+    return render_template("auth_page.html", title="Sign in")
 
 
 @app.route("/creators")
