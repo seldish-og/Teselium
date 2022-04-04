@@ -27,7 +27,7 @@ def creators():
 
 @app.route("/banks")
 def banks():
-    return "banks"
+    return render_template("main_templates/banks_page.html")
 
 
 @app.route("/debit-card")

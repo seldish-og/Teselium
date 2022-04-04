@@ -1,0 +1,45 @@
+/* head banks text */
+.main_header {
+    font-size: 60px;
+    text-align: center;
+    color: #070d59;
+    margin-top: 146px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+/* main banks section */
+.main-banks-section {
+    margin: 0px auto;
+    margin-top: 200px;
+    max-width: 1200px;
+    margin-bottom: 110px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 110px;
+    max-height: 500px;
+}
+
+.card img {
+    width: 500px;
+    height: 300px;
+    left: 351px;
+    top: 1010px;
+}
+
+.banks-description {
+    width: 526px;
+    height: 348px;
+    left: 1072px;
+    top: 1010px;
+}
+
+.banks-description h2 {
+    color: #070d59;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 140%;
+}
