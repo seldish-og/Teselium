@@ -1,3 +1,4 @@
+from turtle import title
 from flask import Flask, render_template
 from werkzeug.exceptions import HTTPException
 
@@ -12,7 +13,7 @@ def handle_exception(e):
 
 @app.route("/")
 def index():
-    return render_template("main_templates/main_page.html")
+    return render_template("main_templates/main_page.html", title="Teselium")
 
 
 @app.route('/auth')
@@ -22,17 +23,17 @@ def auth():
 
 @app.route("/creators")
 def creators():
-    return render_template("main_templates/creators_page.html")
+    return render_template("main_templates/creators_page.html", title="Creators")
 
 
 @app.route("/banks")
 def banks():
-    return render_template("main_templates/banks_page.html")
+    return render_template("main_templates/banks_page.html", title="Banks")
 
 
 @app.route("/debit-card")
 def cards():
-    return "debit cards"
+    return render_template("main_templates/debit_cards_page.html", title="Debit cards")
 
 
 @app.route("/credit-card/<args>")

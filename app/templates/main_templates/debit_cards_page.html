@@ -1,0 +1,18 @@
+{% extends "main_templates/header_and_footer.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href={{ url_for('static', filename='main_styles/cards_style.css' ) }}>
+{% endblock %}
+
+{% block content %}
+
+<div class="main-filter">
+    <span class="result-filter-headers">
+        RESULT
+    </span>
+</div>
+
+{% endblock %}
