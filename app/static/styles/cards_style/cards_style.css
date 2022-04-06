@@ -1,6 +1,9 @@
-result-filter-headers {
-    font-weight: 400;
-    font-style: normal;
-    text-transform: none;
-    text-decoration: none;
+.main-filter {
+  border: 10px;
+}
+.result-filter-headers {
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
 }

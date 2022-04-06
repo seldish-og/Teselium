@@ -4,15 +4,13 @@
 
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href={{ url_for('static', filename='styles/card/cards_style.css' ) }}>
+<link rel="stylesheet" href={{ url_for('static', filename='styles/cards_style/cards_style.css' ) }}>
 {% endblock %}
 
 {% block content %}
 
 <div class="main-filter">
-    <span class="result-filter-headers">
-        RESULT
-    </span>
+    <span class="result-filter-headers">RESULT</span>
 </div>
 
 {% endblock %}
