@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder='../templates',
 
 @app.errorhandler(404)
 def handle_exception(e):
-    return render_template("error_page.html", e=e), 500
+    return render_template("other_templates/error_page.html", e=e), 500
 
 
 @app.route("/")
@@ -17,7 +17,7 @@ def index():
 
 @app.route('/auth')
 def auth():
-    return render_template("auth_page.html", title="Sign in")
+    return render_template("other_templates/auth_page.html", title="Sign in")
 
 
 @app.route("/creators")
