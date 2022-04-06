@@ -80,6 +80,18 @@ a:hover .button {
   .header_navigation {
     display: none;
   }
+
+  .logo img {
+    max-width: 133px;
+  }
+
+  .login-button {
+    padding: 12px 18px !important;
+    font-size: 80%;
+    background: #070d59;
+    text-transform: uppercase;
+    border-radius: 15px;
+  }
 }
 
 /* footer */
