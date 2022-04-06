@@ -4,10 +4,10 @@
 
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href={{ url_for('static', filename='main_styles/creators_style.css' ) }}>
+<link rel="stylesheet" href={{ url_for('static', filename='styles/creators_style/creators_style.css' ) }}>
 {% endblock %}
 
 {% block content %}
-    <div class="main container">
-        <h1 class="main_header">Creators</h1>
-{% endblock %}
+<div class="main container">
+    <h1 class="main_header">Creators</h1>
+    {% endblock %}
