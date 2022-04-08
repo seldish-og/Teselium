@@ -1,5 +1,6 @@
 .filter-container {
   background-color: green;
+<<<<<<< HEAD
   border-bottom: 2px solid black;
   padding: 10px;
   margin-left: 10px;
@@ -8,6 +9,20 @@
 .filter-header {
   font-weight: 400;
   background-color: rgb(255, 86, 86)
+=======
+  max-width: 270px;
+  height: 500px;
+  margin: 30px 12px 30px 5px;
+  text-align: center;
+}
+.filter-header {
+  font-weight: 400;
+  padding: 10px;
+  border-bottom: 2px solid black;
+}
+.text {
+  font-weight: 400;
+>>>>>>> 42a39dc1b01ca86641f466af361cea38262383f8
 }
 
 /* header footer */
