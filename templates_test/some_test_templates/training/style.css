@@ -1,30 +1,93 @@
 .filter-container {
-  background-color: green;
-<<<<<<< HEAD
-  border-bottom: 2px solid black;
-  padding: 10px;
-  margin-left: 10px;
-  width: 300px;
-}
-.filter-header {
-  font-weight: 400;
-  background-color: rgb(255, 86, 86)
-=======
-  max-width: 270px;
+  background-color: rgb(22, 162, 255);
+  padding: 5px;
+  margin: 10px;
+  max-width: 300px;
   height: 500px;
-  margin: 30px 12px 30px 5px;
-  text-align: center;
-}
-.filter-header {
-  font-weight: 400;
-  padding: 10px;
-  border-bottom: 2px solid black;
-}
-.text {
-  font-weight: 400;
->>>>>>> 42a39dc1b01ca86641f466af361cea38262383f8
 }
 
+.filter-header {
+  background-color: rgb(70, 243, 255);
+  margin: 0px 12px 10px 10px;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.header-text {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.top-categories-header{
+  background-color: aqua;
+  margin: 10px;
+}
+
+.top-filters-container{
+  background-color: rgb(255, 133, 204);
+}
+
+.top-filters-list{
+  background-color: rgb(165, 255, 112);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.top-filters-list li{
+  margin: 10px;
+  padding: 5px 7px;
+  min-width: 44px;
+  width: fit-content;
+  
+  background-color: #ff0000;
+  border-radius: 7px;
+  
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.custom-filter-header{
+  background: rgb(255, 129, 129);
+  margin: 10px; 
+  text-align: lef
+}
+
+/* test slider */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d4e1f1;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #070d59;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #070d59;
+  cursor: pointer;
+}
+/* test slider */
+
+/* .bg{
+  background-color: white!important
+} */
 /* header footer */
 /* deafault properties */
 
