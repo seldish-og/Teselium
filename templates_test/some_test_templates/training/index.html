@@ -34,15 +34,15 @@
         <div class="filter-container bg">
 
             <div class="filter-header bg">
-                <span class="header-text">FILTER</span>
+                <span class="header-text" style="font-size: 20px;">FILTER</span>
             </div>
 
             <div class="top-categories-header bg">
-                <span class="header-text">Top Categories:</span>
+                <span class="header-text">Top Categories</span>
             </div>
 
             <div class="top-filters-container bg">
-                <ul class="top-filters-list">
+                <ul class="top-filters-list bg">
                     <li>Lowest Fee</li>
                     <li>Best Cashback</li>
                     <li>Visa</li>
@@ -55,11 +55,38 @@
                 <div class="custom-filter-header bg">
                     <span class="header-text">Custom</span>
                 </div>
-
-                <div class="slidecontainer">
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                
+                <div max-fee-container>
+                    <span class="max-fee">Annual fee:</span>
+                
+                    <!-- amazon test  -->                            
+                    <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
+                        <form method="get" action="/s">                    
+                            <span class="dollar-input-field">$</span>
+                            <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price" class="input-text">
+                            
+                            <span class="dollar-input-field">$</span>
+                            <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price" class="input-text">
+                            <!-- <span class=".dollar-input-field">$</span>
+                            <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price" class="input-text"> -->
+                    
+                            <span class="input-button" id="a-autoid-1">
+                                <span class="a-button-inner">
+                                    <input class="a-button-input" type="submit" aria-labelledby="a-autoid-1-announce">
+                                    <span class="a-button-text" aria-hidden="true" id="a-autoid-1-announce">
+                                        <span class="a-color-link">Go</span>                  
+                                    </span>
+                                </span>
+                            </span>
+                        </form>
+                    </div>
                 </div>
-
+                <!-- slider -->
+                <!-- <div class="slidecontainer">
+                    <input type="range" min="1" max="50" value="1" class="slider" id="myRange">
+                </div> -->
+                <!-- slider -->
+                
             </div>
         </div>
     </section>

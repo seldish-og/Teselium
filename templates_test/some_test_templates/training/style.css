@@ -4,23 +4,27 @@
   margin: 10px;
   max-width: 300px;
   height: 500px;
+  color: #070d59;
 }
 
 .filter-header {
   background-color: rgb(70, 243, 255);
-  margin: 0px 12px 10px 10px;
+  margin: 10px;
+  padding: 5px;
   text-align: center;
   border-bottom: 2px solid black;
 }
 
 .header-text {
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
 }
 
 .top-categories-header{
   background-color: aqua;
-  margin: 10px;
+  margin: 15px 10px 10px 10px;
 }
 
 .top-filters-container{
@@ -39,21 +43,134 @@
   min-width: 44px;
   width: fit-content;
   
-  background-color: #ff0000;
+  background-color: #d4e1f1;
+  color: #070d59;
   border-radius: 7px;
   
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
+
+  cursor: pointer;
+}
+
+.top-filters-list li:hover{
+  color: #d4e1f1;
+  background-color: #070d59;
 }
 
 .custom-filter-header{
   background: rgb(255, 129, 129);
   margin: 10px; 
-  text-align: lef
+  text-align: left;
 }
 
+.max-fee {
+  margin: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* amazon test input*/
+
+.am-input-container{
+  margin: 10px;
+  margin-top: 0px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  color: #070d59;
+  box-sizing: border-box;
+}
+.dollar-input-field{
+  padding-left: 9px;
+  position: absolute;
+  margin-top: 5px;
+  line-height: 30px;
+  font-size: 100%;
+}
+.input-text{
+  background-color: #fff;
+  height: 31px;
+  padding: 3px 7px;
+  line-height: normal;
+  border: 1px solid #888C8C;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+  outline: 0;
+  margin-top: 4px;
+  margin-right: 2px;
+  width: 78px;
+  padding-left: 23px;
+}
+.input-button:not(.a-button-toggle) {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+}
+.input-button{
+  background: #FFF;
+  border-radius: 3px;
+  border-color: #D5D9D9;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+  text-decoration: none !important;
+  vertical-align: middle;
+  margin-top: 4px !important;
+  margin-bottom: 7px;
+}
+.a-button-inner {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 29px;
+  border-radius: 2px;
+}
+.a-button-input {
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: .01;
+  outline: 0;
+  overflow: visible;
+  z-index: 20;
+}
+.a-button-text {
+  background-color: transparent;
+  border: 0;
+  display: block;
+  font-size: 13px;
+  line-height: 29px;
+  margin: 0;
+  outline: 0;
+  padding: 0 10px 0 11px;
+  text-align: center;
+  white-space: nowrap;
+}
+.a-button-text:hover{
+  color: #d4e1f1;
+  background-color: #070d59;
+}
+/* amazon test input*/
+
+
+
+
 /* test slider */
+/* .slidecontainer{
+  margin: 15px;
+}
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -82,12 +199,12 @@
   border-radius: 50%;
   background: #070d59;
   cursor: pointer;
-}
+} */
 /* test slider */
 
-/* .bg{
+.bg{
   background-color: white!important
-} */
+}
 /* header footer */
 /* deafault properties */
 
