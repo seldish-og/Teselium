@@ -1,3 +1,7 @@
+.main-container {
+  display: flex;
+}
+
 .filter-container {
   background-color: rgb(22, 162, 255);
   padding: 5px;
@@ -51,7 +55,7 @@
 }
 
 .top-filters-list li:hover {
-  color: #d4e1f1;
+  color: #fff;
   background-color: #070d59;
 }
 
