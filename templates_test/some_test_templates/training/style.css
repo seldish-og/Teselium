@@ -1,6 +1,53 @@
 .main-container {
-  display: flex;
+   display: flex;
+   flex-wrap: wrap;
+  /* justify-content: space-between; */
 }
+/* CARDS*/
+.cards-container{
+  width:100%;
+  max-width: 1000px;
+  margin: 10px;
+  background-color: #fff347;
+  overflow-y: visible;
+}
+
+.card{
+  border: 2px solid black;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  max-height: 300px;
+
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card img{
+  max-width: 250px;
+  max-height: 150px;
+  margin: 20px
+}
+
+.card button{
+  padding: 9px 18px;
+  font-size: 100%;
+  border-radius: 19px;
+
+  background: #070d59;
+  color:#fff;
+  text-transform: uppercase;
+}
+
+.card button:hover {
+  background: #333ba8;
+  cursor: pointer;
+}
+
+
+/* //// CARDS */
+/* filter main */
 
 .filter-container {
   background-color: rgb(22, 162, 255);
@@ -11,7 +58,6 @@
 }
 
 .filter-header {
-  background-color: rgb(70, 243, 255);
   margin: 10px;
   padding: 5px;
   text-align: center;
@@ -26,9 +72,10 @@
 }
 
 .top-categories-header {
-  background-color: aqua;
   margin: 15px 10px 10px 10px;
 }
+/* ////filter main */
+
 
 /* top filters */
 
@@ -59,16 +106,15 @@
   background-color: #070d59;
 }
 
-/* top filters */
+/* ////top filters */
+
 
 /* custom filters */
+
 .custom-filter-header {
-  background: rgb(255, 129, 129);
   margin: 10px;
   text-align: left;
 }
-
-/* input containers */
 
 .annuel-fee,
 .credit-score,
@@ -83,7 +129,6 @@
 }
 
 /* amazon test input*/
-
 .am-input-container {
   margin: 10px;
   margin-top: 0px;
@@ -105,7 +150,7 @@
   height: 31px;
   padding: 3px 7px;
   line-height: normal;
-  border: 1px solid #888c8c;
+  border: 1px solid #070d59;;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
   outline: 0;
@@ -119,9 +164,10 @@
   box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
 }
 .input-button {
-  background: #fff;
+  background: #d4e1f1;
+  color: #070d59;
   border-radius: 3px;
-  border-color: #d5d9d9;
+  border-color: #070d59;
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
@@ -132,6 +178,11 @@
   vertical-align: middle;
   margin-top: 4px !important;
   margin-bottom: 7px;
+}
+
+.input-button:hover{
+  background-color: #070d59;
+  color: #fff;
 }
 .a-button-inner {
   display: block;
@@ -171,7 +222,8 @@
   color: #d4e1f1;
   background-color: #070d59;
 }
-/* amazon test input*/
+/* ////amazon test input*/
+
 
 /* banks list */
 .banks-filter-list {
@@ -199,14 +251,21 @@
 }
 
 .banks-filter-list li:hover {
-  color: #d4e1f1;
+  color: #fff;
   background-color: #070d59;
 }
-/* custom filters */
-.bg {
-  background-color: white !important;
-}
+/* ////banks list */
 
+
+/* ////custom filters */
+/* .bg {
+  background-color: white !important;
+} */
+
+
+
+
+/* DONT COPY!!! */
 /* header footer */
 /* deafault properties */
 
