@@ -3,7 +3,6 @@
   padding: 5px;
   margin: 10px;
   max-width: 300px;
-  height: 500px;
   color: #070d59;
 }
 
@@ -22,29 +21,28 @@
   text-transform: uppercase;
 }
 
-.top-categories-header{
+.top-categories-header {
   background-color: aqua;
   margin: 15px 10px 10px 10px;
 }
 
 /* top filters */
 
-
-.top-filters-list{
+.top-filters-list {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
 }
-.top-filters-list li{
+.top-filters-list li {
   margin: 10px;
   padding: 5px 7px;
   min-width: 44px;
   width: fit-content;
-  
+
   background-color: #d4e1f1;
   color: #070d59;
   border-radius: 7px;
-  
+
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
@@ -52,7 +50,7 @@
   cursor: pointer;
 }
 
-.top-filters-list li:hover{
+.top-filters-list li:hover {
   color: #d4e1f1;
   background-color: #070d59;
 }
@@ -60,15 +58,19 @@
 /* top filters */
 
 /* custom filters */
-.custom-filter-header{
+.custom-filter-header {
   background: rgb(255, 129, 129);
-  margin: 10px; 
+  margin: 10px;
   text-align: left;
 }
 
 /* input containers */
 
-.annuel-fee, .credit-score, .apr, .cashback, .banks-filter-h{
+.annuel-fee,
+.credit-score,
+.apr,
+.cashback,
+.banks-filter-h {
   margin: 10px;
   font-size: 12px;
   line-height: 16px;
@@ -78,7 +80,7 @@
 
 /* amazon test input*/
 
-.am-input-container{
+.am-input-container {
   margin: 10px;
   margin-top: 0px;
   width: 100%;
@@ -87,19 +89,19 @@
   color: #070d59;
   box-sizing: border-box;
 }
-.dollar-input-field{
+.dollar-input-field {
   padding-left: 9px;
   position: absolute;
   margin-top: 5px;
   line-height: 30px;
   font-size: 100%;
 }
-.input-text{
+.input-text {
   background-color: #fff;
   height: 31px;
   padding: 3px 7px;
   line-height: normal;
-  border: 1px solid #888C8C;
+  border: 1px solid #888c8c;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
   outline: 0;
@@ -112,10 +114,10 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
 }
-.input-button{
-  background: #FFF;
+.input-button {
+  background: #fff;
   border-radius: 3px;
-  border-color: #D5D9D9;
+  border-color: #d5d9d9;
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
@@ -144,7 +146,7 @@
   width: 100%;
   left: 0;
   top: 0;
-  opacity: .01;
+  opacity: 0.01;
   outline: 0;
   overflow: visible;
   z-index: 20;
@@ -161,7 +163,7 @@
   text-align: center;
   white-space: nowrap;
 }
-.a-button-text:hover{
+.a-button-text:hover {
   color: #d4e1f1;
   background-color: #070d59;
 }
@@ -197,10 +199,9 @@
   background-color: #070d59;
 }
 /* custom filters */
-.bg{
-  background-color: white!important
+.bg {
+  background-color: white !important;
 }
-
 
 /* header footer */
 /* deafault properties */
@@ -288,8 +289,8 @@ a:hover .button {
   .logo img {
     max-width: 133px;
   }
-  .login-button{
-    padding: 12px 18px!important;
+  .login-button {
+    padding: 12px 18px !important;
     font-size: 80%;
     background: #070d59;
     text-transform: uppercase;
@@ -313,7 +314,6 @@ ul {
 }
 
 .footer {
-  margin-top: 400px;
   background-color: #d4e1f1;
   padding: 70px 0;
 }
