@@ -45,5 +45,5 @@ def credit_cards():
 # put args to render_template#
 
 # good article about python to js and back with ajax
-
+#
 # https://stackoverflow.com/questions/52484647/sending-json-data-from-python-to-javascript-and-accessing-them
