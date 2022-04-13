@@ -35,7 +35,15 @@ def cards():
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
 
 
-@app.route("/credit-card/<args>")
-def credit_cards(args):
-    print(args)
-    return "credit cards"
+@app.route("/credit-card/")
+def credit_cards():
+    return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
+
+# how I think response should work
+# func return big json
+# parse it as a dictionary
+# put args to render_template#
+
+# good article about python to js and back with ajax
+
+# https://stackoverflow.com/questions/52484647/sending-json-data-from-python-to-javascript-and-accessing-them
