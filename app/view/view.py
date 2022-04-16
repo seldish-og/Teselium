@@ -4,7 +4,7 @@ from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__, template_folder='../templates',
             static_folder='../static')
-app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+app.config['SECRET_KEY'] = '8222584161030350316'
 
 
 @app.errorhandler(404)
@@ -20,9 +20,9 @@ def index():
 @app.route('/auth', methods=['GET', 'POST'])
 def auth():
     login_form = LoginForm()
-    sign_up_form = SignUpForm()
+    # sign_up_form = SignUpForm()
     return render_template(
-        "other_templates/auth_page.html", title="Sign In")
+        "other_templates/auth_page.html", form=login_form, title="Sign In")
 
 
 @app.route("/creators")

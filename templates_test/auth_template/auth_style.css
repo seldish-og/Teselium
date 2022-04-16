@@ -275,12 +275,10 @@ h6 span {
 }
 
 .logo {
-  position: absolute;
   top: 10px;
-  align-items: center;
-  /* right: 30px; */
+  margin-left: 37px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   z-index: 100;
   transition: all 250ms linear;
 }
