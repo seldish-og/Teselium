@@ -1,8 +1,10 @@
 from flask import Flask, render_template
+from auth_forms import LoginForm, SignUpForm
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__, template_folder='../templates',
             static_folder='../static')
+app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
 @app.errorhandler(404)
@@ -15,9 +17,12 @@ def index():
     return render_template("main_templates/main_page.html", title="Teselium")
 
 
-@app.route('/auth')
+@app.route('/auth', methods=['GET', 'POST'])
 def auth():
-    return render_template("other_templates/auth_page.html", title="Sign in")
+    login_form = LoginForm()
+    sign_up_form = SignUpForm()
+    return render_template(
+        "other_templates/auth_page.html", title="Sign In")
 
 
 @app.route("/creators")
