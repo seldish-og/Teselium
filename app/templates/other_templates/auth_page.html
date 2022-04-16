@@ -32,19 +32,29 @@
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3 log-in-color">Log In</h4>
-											<div class="form-group">
-												<input type="email" name="logemail" class="form-style"
-													placeholder="Your Email" id="logemail" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>
-											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style"
-													placeholder="Your Password" id="logpass" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<a href="#" class="btn mt-4">submit</a>
-											<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
-													password?</a></p>
+
+											{% block content %}
+											<form action="" method="post" novalidate>
+												{{ login_form.hidden_tag() }}
+												<div class="form-group">
+
+													{{ login_form.email.input }}
+													{{ login_form.email(type="email", class="form-style input", placeholder="Your Email", autocomplete="off") }}
+													
+													<i class="input-icon uil uil-at"></i>
+												</div>
+												<div class="form-group mt-2">
+
+													{{ login_form.password.input }}
+													{{ login_form.password(type="password", class="form-style input", placeholder="Your Password", autocomplete="off") }}
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+											{{ login_form.password.button }}
+											{{ login_form.submit(type="submit", class="btn mt-4") }}
+											</form>
+											{% endblock %}
+											<!-- <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
+													password?</a></p> -->
 										</div>
 									</div>
 								</div>
@@ -52,22 +62,33 @@
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3 log-in-color">Sign Up</h4>
-											<div class="form-group">
-												<input type="text" name="logname" class="form-style"
-													placeholder="Your Full Name" id="logname" autocomplete="off">
-												<i class="input-icon uil uil-user"></i>
-											</div>
-											<div class="form-group mt-2">
-												<input type="email" name="logemail" class="form-style"
-													placeholder="Your Email" id="logemail" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>
-											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style"
-													placeholder="Your Password" id="logpass" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<a href="#" class="btn mt-4">submit</a>
+
+											{% block content2 %}
+											<form action="" method="post" novalidate>
+												{{ sign_up_form.hidden_tag() }}
+
+												<div class="form-group">
+													{{ sign_up_form.username.input }}
+													{{ sign_up_form.username(type="username", class="form-style input", placeholder="Your Name", autocomplete="off") }}
+													<i class="input-icon uil uil-user"></i>
+												</div>
+
+												<div class="form-group mt-2">
+													{{ sign_up_form.email.input }}
+													{{ sign_up_form.email(type="email", class="form-style input", placeholder="Your Email", autocomplete="off") }}
+													<i class="input-icon uil uil-at"></i>
+												</div>
+
+												<div class="form-group mt-2">
+													{{ sign_up_form.password.input }}
+													{{ sign_up_form.password(type="password", class="form-style input", placeholder="Your Password", autocomplete="off") }}
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												{{ sign_up_form.password.button }}
+												{{ sign_up_form.submit(type="submit", class="btn mt-4") }}
+											</form>
+											{% endblock %}
+
 										</div>
 									</div>
 								</div>

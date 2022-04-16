@@ -189,46 +189,46 @@ h6 span {
   transition: all 200ms linear;
 }
 
-.form-group input:-ms-input-placeholder {
+.form-group .input:-ms-input-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-.form-group input::-moz-placeholder {
+.form-group .input::-moz-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-.form-group input:-moz-placeholder {
+.form-group .input:-moz-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-.form-group input::-webkit-input-placeholder {
+.form-group .input::-webkit-input-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-.form-group input:focus:-ms-input-placeholder {
+.form-group .input:focus:-ms-input-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-.form-group input:focus::-moz-placeholder {
+.form-group .input:focus::-moz-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-.form-group input:focus:-moz-placeholder {
+.form-group .input:focus:-moz-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-.form-group input:focus::-webkit-input-placeholder {
+.form-group .input:focus::-webkit-input-placeholder {
   opacity: 0;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
