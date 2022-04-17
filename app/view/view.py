@@ -53,7 +53,7 @@ def cards():
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
 
 
-@ app.route("/credit-card/")
+@ app.route("/credit-card")
 def credit_cards():
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
 
