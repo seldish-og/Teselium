@@ -24,13 +24,13 @@ def auth():
 
     if sign_up_form.validate_on_submit():
         print(sign_up_form.username.data)
-        print("HHHHHHHHHHHHHHHHHHHH")
+        print("signed up")
         print(sign_up_form.email.data)
         print(sign_up_form.password.data)
         return redirect('/')
 
     if login_form.validate_on_submit():
-        print("LLLLLLLLLLLLLLLLL")
+        print("logged in")
         print(login_form.email.data)
         print(login_form.password.data)
         return redirect('/')
