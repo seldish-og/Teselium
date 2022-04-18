@@ -43,22 +43,24 @@
                     <!-- amazon input  -->
                     <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
                         <form method="get" action="/s">
+                            {{ credit_filter_form.hidden_tag() }}
+                            
                             <span class="dollar-input-field">$</span>
-                            <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
-                                class="input-text">
+                            {{ credit_filter_form.annuel_fee_min.input }}
+                            
+                            {{ credit_filter_form.annuel_fee_min(type="text", maxlength="9",
+                            placeholder="Min", class="input-text") }}
+                            <!-- <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
+                                class="input-text"> -->
 
                             <span class="dollar-input-field">$</span>
-                            <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
-                                class="input-text">
+                            {{ credit_filter_form.annuel_fee_max.input }}
 
-                            <span class="input-button" id="a-autoid-1">
-                                <span class="a-button-inner">
-                                    <input class="a-button-input" type="submit" aria-labelledby="a-autoid-1-announce">
-                                    <span class="a-button-text" aria-hidden="true" id="a-autoid-1-announce">
-                                        <span class="a-color-link">Go</span>
-                                    </span>
-                                </span>
-                            </span>
+                            {{ credit_filter_form.annuel_fee_max(type="text", maxlength="9",
+                            placeholder="Max", class="input-text") }}
+                            <!-- <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
+                                class="input-text"> -->
+
                         </form>
                     </div>
                 </div>
@@ -75,14 +77,6 @@
                             <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
                                 class="input-text">
 
-                            <span class="input-button" id="a-autoid-1">
-                                <span class="a-button-inner">
-                                    <input class="a-button-input" type="submit" aria-labelledby="a-autoid-1-announce">
-                                    <span class="a-button-text" aria-hidden="true" id="a-autoid-1-announce">
-                                        <span class="a-color-link">Go</span>
-                                    </span>
-                                </span>
-                            </span>
                         </form>
                     </div>
                 </div>
@@ -101,14 +95,6 @@
                             <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
                                 class="input-text">
 
-                            <span class="input-button" id="a-autoid-1">
-                                <span class="a-button-inner">
-                                    <input class="a-button-input" type="submit" aria-labelledby="a-autoid-1-announce">
-                                    <span class="a-button-text" aria-hidden="true" id="a-autoid-1-announce">
-                                        <span class="a-color-link">Go</span>
-                                    </span>
-                                </span>
-                            </span>
                         </form>
                     </div>
                 </div>
@@ -127,14 +113,6 @@
                             <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
                                 class="input-text">
 
-                            <span class="input-button" id="a-autoid-1">
-                                <span class="a-button-inner">
-                                    <input class="a-button-input" type="submit" aria-labelledby="a-autoid-1-announce">
-                                    <span class="a-button-text" aria-hidden="true" id="a-autoid-1-announce">
-                                        <span class="a-color-link">Go</span>
-                                    </span>
-                                </span>
-                            </span>
                         </form>
                     </div>
                 </div>
@@ -163,6 +141,8 @@
                 </div>
 
                 <div class="complete-button">
+                    {{ credit_filter_form.submit.a }}
+                    {{ credit_filter_form.submit }}
                     <a href="#">
                         <button>Find</button>
                     </a>

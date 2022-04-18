@@ -30,7 +30,7 @@
 
 
 
-    <section class="main-result-page">
+    <form class="main-result-page" name="filter_form">
         <div class="main-container">
             <div class="filter-container bg">
 
@@ -63,25 +63,18 @@
 
                         <!-- amazon input  -->
                         <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                            <form method="get" action="/s">
+                            <div method="get" action="/s">
+
                                 <span class="dollar-input-field">$</span>
-                                <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
+                                <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low_fee"
                                     class="input-text">
 
                                 <span class="dollar-input-field">$</span>
-                                <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
+                                <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high_fee"
                                     class="input-text">
 
-                                <span class="input-button" id="a-autoid-1">
-                                    <span class="a-button-inner">
-                                        <input class="a-button-input" type="submit"
-                                            aria-labelledby="a-autoid-1-announce">
-                                        <span class="a-button-text" aria-hidden="true" id="a-autoid-1-announce">
-                                            <span class="a-color-link">Go</span>
-                                        </span>
-                                    </span>
-                                </span>
-                            </form>
+                              
+                            </div>
                         </div>
                     </div>
 
@@ -90,7 +83,7 @@
 
                         <!-- amazon input  -->
                         <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                            <form method="get" action="/s">
+                            <div method="get" action="/s">
                                 <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
                                     class="input-text">
 
@@ -106,7 +99,7 @@
                                         </span>
                                     </span>
                                 </span>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -115,7 +108,7 @@
 
                         <!-- amazon input  -->
                         <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                            <form method="get" action="/s">
+                            <div method="get" action="/s">
                                 <span class="dollar-input-field">%</span>
                                 <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
                                     class="input-text">
@@ -133,7 +126,7 @@
                                         </span>
                                     </span>
                                 </span>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -142,7 +135,7 @@
 
                         <!-- amazon input  -->
                         <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                            <form method="get" action="/s">
+                            <div method="get" action="/s">
                                 <span class="dollar-input-field">%</span>
                                 <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
                                     class="input-text">
@@ -160,7 +153,7 @@
                                         </span>
                                     </span>
                                 </span>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -189,7 +182,7 @@
 
                     <div class="complete-button">
                         <a href="#">
-                            <button>Find</button>
+                            <button type="submit">Find</button>
                         </a>
                     </div>
                 </div>
@@ -255,7 +248,7 @@
 
             </div>
         </div>
-    </section>
+    </form>
 
 
 
@@ -306,7 +299,7 @@
             </div>
         </div>
     </footer>
-
+<script src="script.js"></script>
 </body>
 
 </html>

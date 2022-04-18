@@ -29,4 +29,4 @@ class CreditFilterForm(FlaskForm):
     #     option_widget=CheckboxInput())
     '''/good thing for banks'''
 
-    submit = SubmitField('submit')
+    submit = SubmitField('Submit')

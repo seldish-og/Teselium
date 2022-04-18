@@ -1,8 +1,16 @@
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
+// let form = document.forms.form;
+// let low = form.elements.low_fee;
+// let high = form.elements.high_fee;
+// console.log(low.value)
+// {/* <div>
+//   <form name="publish">
+//     <input type="text" name="message" placeholder="введите сообщение"/>
+//     <input type="submit" value="отправить"/>
+//   </form>
+// </div> */}
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
+document.forms.filter_form.onsubmit = function() {
+  let res = this.low_fee.value;
+  console.log(res)
+  return false;
+};
