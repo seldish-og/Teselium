@@ -23,8 +23,8 @@ def auth():
     sign_up_form = SignUpForm()
 
     if sign_up_form.validate_on_submit():
-        print(sign_up_form.username.data)
         print("signed up")
+        print(sign_up_form.username.data)
         print(sign_up_form.email.data)
         print(sign_up_form.password.data)
         return redirect('/')
@@ -55,8 +55,19 @@ def cards():
 
 @ app.route("/credit-card")
 def credit_cards():
+    # generate_cards(argument)
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
 
+
+#
+# some dreams
+#
+#
+#
+#
+#
+#
+#
 # how I think response should work
 # func return big json
 # parse it as a dictionary
