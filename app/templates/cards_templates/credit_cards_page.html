@@ -12,24 +12,25 @@
 <section class="main-result-page">
     <div class="main-container">
         <div class="filter-container bg">
+            <div class="main">
+                <div class="filter-header bg">
+                    <span class="header-text" style="font-size: 20px;">FILTER</span>
+                </div>
 
-            <div class="filter-header bg">
-                <span class="header-text" style="font-size: 20px;">FILTER</span>
-            </div>
+                <div class="top-categories-header bg">
+                    <span class="header-text">Top Categories</span>
+                </div>
 
-            <div class="top-categories-header bg">
-                <span class="header-text">Top Categories</span>
-            </div>
-
-            <div class="top-filters-container bg">
-                <ul class="top-filters-list bg">
-                    <li>Lowest Fee</li>
-                    <li>Best Cashback</li>
-                    <li>Lowest APR</li>
-                    <li>Visa</li>
-                    <li>Master card</li>
-                    <li>American Express</li>
-                </ul>
+                <div class="top-filters-container bg">
+                    <ul class="top-filters-list bg">
+                        <li>Lowest Fee</li>
+                        <li>Best Cashback</li>
+                        <li>Lowest APR</li>
+                        <li>Visa</li>
+                        <li>Master card</li>
+                        <li>American Express</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="custom-filter-container">
@@ -43,23 +44,13 @@
                     <!-- amazon input  -->
                     <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
                         <form method="get" action="/s">
-                            {{ credit_filter_form.hidden_tag() }}
-                            
                             <span class="dollar-input-field">$</span>
-                            {{ credit_filter_form.annuel_fee_min.input }}
-                            
-                            {{ credit_filter_form.annuel_fee_min(type="text", maxlength="9",
-                            placeholder="Min", class="input-text") }}
-                            <!-- <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
-                                class="input-text"> -->
+                            <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
+                                class="input-text">
 
                             <span class="dollar-input-field">$</span>
-                            {{ credit_filter_form.annuel_fee_max.input }}
-
-                            {{ credit_filter_form.annuel_fee_max(type="text", maxlength="9",
-                            placeholder="Max", class="input-text") }}
-                            <!-- <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
-                                class="input-text"> -->
+                            <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
+                                class="input-text">
 
                         </form>
                     </div>
@@ -141,8 +132,6 @@
                 </div>
 
                 <div class="complete-button">
-                    {{ credit_filter_form.submit.a }}
-                    {{ credit_filter_form.submit }}
                     <a href="#">
                         <button>Find</button>
                     </a>
@@ -197,5 +186,8 @@
         </div>
     </div>
 </section>
+{% endblock %}
 
+{% block script %}
+<script src={{ url_for('static', filename='scripts/credit_filter_form.js' ) }}></script>
 {% endblock %}

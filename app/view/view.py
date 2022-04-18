@@ -1,6 +1,5 @@
 from flask import Flask, redirect, render_template, request
 from .auth_forms import LoginForm, SignUpForm
-from .credit_filter_form import CreditFilterForm
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__, template_folder='../templates',
@@ -56,17 +55,8 @@ def cards():
 
 @ app.route("/credit-card")
 def credit_cards():
-    credit_filter_form = CreditFilterForm()
-    print("in")
-    if credit_filter_form.validate_on_submit():
-        print("credit_filter_form")
-        print(credit_filter_form.email.data)
-        print(credit_filter_form.password.data)
-        return
-
     # generate_cards(argument)
-    return render_template("cards_templates/credit_cards_page.html",
-                           credit_filter_form=credit_filter_form, title="Credit cards")
+    return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
 
 
 #
