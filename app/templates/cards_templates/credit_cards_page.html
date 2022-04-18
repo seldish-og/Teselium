@@ -10,192 +10,186 @@
 {% block content %}
 
 <section class="main-result-page">
-    <div class="main-container">
-        <div class="filter-container bg">
+    <form class="main-result-page" name="filter_form">
+        <div class="main-container">
+            <div class="filter-container bg">
+                <div class="main">
+                    <div class="filter-header bg">
+                        <span class="header-text" style="font-size: 20px;">FILTER</span>
+                    </div>
 
-            <div class="filter-header bg">
-                <span class="header-text" style="font-size: 20px;">FILTER</span>
+                    <div class="top-categories-header bg">
+                        <span class="header-text">Top Categories</span>
+                    </div>
+
+                    <div class="top-filters-container bg">
+                        <ul class="top-filters-list bg">
+                            <li>Lowest Fee</li>
+                            <li>Best Cashback</li>
+                            <li>Lowest APR</li>
+                            <li>Visa</li>
+                            <li>Master card</li>
+                            <li>American Express</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="custom-filter-container">
+                    <div class="custom-filter-header bg">
+                        <span class="header-text">Custom</span>
+                    </div>
+
+                    <div annuel-fee-container>
+                        <span class="annuel-fee">Annual fee:</span>
+
+                        <!-- amazon input  -->
+                        <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
+                            <div>
+                                <span class="dollar-input-field">$</span>
+                                <input type="text" maxlength="9" placeholder="Min" name="low_fee"
+                                    class="input-text">
+
+                                <span class="dollar-input-field">$</span>
+                                <input type="text" maxlength="9" placeholder="Max" name="high_fee"
+                                    class="input-text">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div credit-score-fee-container>
+                        <span class="credit-score">credit-score:</span>
+
+                        <!-- amazon input  -->
+                        <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
+                            <div>
+                                <input type="text" maxlength="9"placeholder="Min" name="low_credit_score"
+                                    class="input-text">
+
+                                <input type="text" maxlength="9" placeholder="Max" name="high_credit_score"
+                                    class="input-text">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div apr-container>
+                        <span class="apr">Regular APR:</span>
+
+                        <!-- amazon input  -->
+                        <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
+                            <div>
+                                <span class="dollar-input-field">%</span>
+                                <input type="text" maxlength="9"placeholder="Min" name="low_apr"
+                                    class="input-text">
+
+                                <span class="dollar-input-field">%</span>
+                                <input type="text" maxlength="9" placeholder="Max" name="high_apr"
+                                    class="input-text">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div cashback-container>
+                        <span class="cashback">cashback:</span>
+
+                        <!-- amazon input  -->
+                        <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
+                            <form method="get" action="/s">
+                                <span class="dollar-input-field">%</span>
+                                <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low_cashback"
+                                    class="input-text">
+
+                                <span class="dollar-input-field">%</span>
+                                <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high_cashback"
+                                    class="input-text">
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="banks-filter-container bg">
+                        <span class="banks-filter-h">banks:</span>
+                        <ul class="banks-filter-list">
+                            <li>ally bank</li>
+                            <li>Bank of America</li>
+                            <li>Bny Mellon </li>
+                            <li>capital one 360</li>
+                            <li>citibank</li>
+                            <li>fifth third bank</li>
+                            <li>goldman sachs</li>
+                            <li>HSBC</li>
+                            <li>JP chase</li>
+                            <li>PNC</li>
+                            <li>santander</li>
+                            <li>silicon valley bank</li>
+                            <li>state street corp</li>
+                            <li>TD bank</li>
+                            <li>truist bank</li>
+                            <li>US bank</li>
+                            <li>wells fargo</li>
+                        </ul>
+                    </div>
+
+                    <div class="complete-button">
+                        <a href="#">
+                            <button>Find</button>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="top-categories-header bg">
-                <span class="header-text">Top Categories</span>
-            </div>
+            <div class="cards-container bg">
+                <div class="card">
+                    <div class="left_card_container">
+                        <img src="test.png" alt="tt">
+                        <a href="#">
+                            <button>Apply</button>
+                        </a>
+                    </div>
 
-            <div class="top-filters-container bg">
-                <ul class="top-filters-list bg">
-                    <li>Lowest Fee</li>
-                    <li>Best Cashback</li>
-                    <li>Lowest APR</li>
-                    <li>Visa</li>
-                    <li>Master card</li>
-                    <li>American Express</li>
-                </ul>
-            </div>
-
-            <div class="custom-filter-container">
-                <div class="custom-filter-header bg">
-                    <span class="header-text">Custom</span>
-                </div>
-
-                <div annuel-fee-container>
-                    <span class="annuel-fee">Annual fee:</span>
-
-                    <!-- amazon input  -->
-                    <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                        <form method="get" action="/s">
-                            {{ credit_filter_form.hidden_tag() }}
-                            
-                            <span class="dollar-input-field">$</span>
-                            {{ credit_filter_form.annuel_fee_min.input }}
-                            
-                            {{ credit_filter_form.annuel_fee_min(type="text", maxlength="9",
-                            placeholder="Min", class="input-text") }}
-                            <!-- <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
-                                class="input-text"> -->
-
-                            <span class="dollar-input-field">$</span>
-                            {{ credit_filter_form.annuel_fee_max.input }}
-
-                            {{ credit_filter_form.annuel_fee_max(type="text", maxlength="9",
-                            placeholder="Max", class="input-text") }}
-                            <!-- <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
-                                class="input-text"> -->
-
-                        </form>
+                    <div class="right_card_container">
+                        <h3>Card Name</h3>
+                        <div class="description-container">
+                            <div class="description-item">
+                                <p>Cashback</p>
+                                <span>2-5 %</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Annual Fee</p>
+                                <span>5 %</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Credit Score</p>
+                                <span>690-850</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Network</p>
+                                <span>MasterCard</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Regular APR</p>
+                                <span>0 %</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Bank</p>
+                                <span>Fifth Third Bank</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Annual Fee</p>
+                                <span>0 %</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div credit-score-fee-container>
-                    <span class="credit-score">credit-score:</span>
-
-                    <!-- amazon input  -->
-                    <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                        <form method="get" action="/s">
-                            <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
-                                class="input-text">
-
-                            <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
-                                class="input-text">
-
-                        </form>
-                    </div>
-                </div>
-
-                <div apr-container>
-                    <span class="apr">Regular APR:</span>
-
-                    <!-- amazon input  -->
-                    <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                        <form method="get" action="/s">
-                            <span class="dollar-input-field">%</span>
-                            <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
-                                class="input-text">
-
-                            <span class="dollar-input-field">%</span>
-                            <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
-                                class="input-text">
-
-                        </form>
-                    </div>
-                </div>
-
-                <div cashback-container>
-                    <span class="cashback">cashback:</span>
-
-                    <!-- amazon input  -->
-                    <div id="input-fields-amaz-container" aria-disabled="false" class="am-input-container">
-                        <form method="get" action="/s">
-                            <span class="dollar-input-field">%</span>
-                            <input type="text" maxlength="9" id="low-price" placeholder="Min" name="low-price"
-                                class="input-text">
-
-                            <span class="dollar-input-field">%</span>
-                            <input type="text" maxlength="9" id="high-price" placeholder="Max" name="high-price"
-                                class="input-text">
-
-                        </form>
-                    </div>
-                </div>
-
-                <div class="banks-filter-container bg">
-                    <span class="banks-filter-h">banks:</span>
-                    <ul class="banks-filter-list">
-                        <li>ally bank</li>
-                        <li>Bank of America</li>
-                        <li>Bny Mellon </li>
-                        <li>capital one 360</li>
-                        <li>citibank</li>
-                        <li>fifth third bank</li>
-                        <li>goldman sachs</li>
-                        <li>HSBC</li>
-                        <li>JP chase</li>
-                        <li>PNC</li>
-                        <li>santander</li>
-                        <li>silicon valley bank</li>
-                        <li>state street corp</li>
-                        <li>TD bank</li>
-                        <li>truist bank</li>
-                        <li>US bank</li>
-                        <li>wells fargo</li>
-                    </ul>
-                </div>
-
-                <div class="complete-button">
-                    {{ credit_filter_form.submit.a }}
-                    {{ credit_filter_form.submit }}
-                    <a href="#">
-                        <button>Find</button>
-                    </a>
-                </div>
             </div>
         </div>
-
-        <div class="cards-container bg">
-            <div class="card">
-                <div class="left_card_container">
-                    <img src="test.png" alt="tt">
-                    <a href="#">
-                        <button>Apply</button>
-                    </a>
-                </div>
-
-                <div class="right_card_container">
-                    <h3>Card Name</h3>
-                    <div class="description-container">
-                        <div class="description-item">
-                            <p>Cashback</p>
-                            <span>2-5 %</span>
-                        </div>
-                        <div class="description-item">
-                            <p>Annual Fee</p>
-                            <span>5 %</span>
-                        </div>
-                        <div class="description-item">
-                            <p>Credit Score</p>
-                            <span>690-850</span>
-                        </div>
-                        <div class="description-item">
-                            <p>Network</p>
-                            <span>MasterCard</span>
-                        </div>
-                        <div class="description-item">
-                            <p>Regular APR</p>
-                            <span>0 %</span>
-                        </div>
-                        <div class="description-item">
-                            <p>Bank</p>
-                            <span>Fifth Third Bank</span>
-                        </div>
-                        <div class="description-item">
-                            <p>Annual Fee</p>
-                            <span>0 %</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    </form>
 </section>
+{% endblock %}
 
+{% block script %}
+<script src={{ url_for('static', filename='scripts/credit_filter_form.js' ) }}></script>
 {% endblock %}
