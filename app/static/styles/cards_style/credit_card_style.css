@@ -332,6 +332,10 @@
     margin: 25px 10px 25px 10px;
   }
   
+  .complete-button button:hover{
+    background: #333ba8;
+    color: #fff;
+  }
   /* ////banks list */
   
   /* ////custom filters */

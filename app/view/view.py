@@ -67,4 +67,3 @@ def credit_post():
     print(data)
 
     return "200"
-    # return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
