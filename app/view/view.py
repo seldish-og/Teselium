@@ -1,3 +1,4 @@
+import json
 from flask import Flask, redirect, render_template, request
 from .auth_forms import LoginForm, SignUpForm
 from werkzeug.exceptions import HTTPException
@@ -38,41 +39,32 @@ def auth():
     return render_template("other_templates/auth_page.html", sign_up_form=sign_up_form, login_form=login_form, title="Sign In")
 
 
-@ app.route("/creators")
+@app.route("/creators")
 def creators():
     return render_template("creators_template/creators_page.html", title="Creators")
 
 
-@ app.route("/banks")
+@app.route("/banks")
 def banks():
     return render_template("banks_template/banks_page.html", title="Banks")
 
 
-@ app.route("/debit-card")
+@app.route("/debit-card")
 def cards():
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
 
 
-@ app.route("/credit-card")
+@app.route("/credit-card", methods=["GET"])
 def credit_cards():
+    print("sssssssssss")
     # generate_cards(argument)
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
 
 
-#
-# some dreams
-#
-#
-#
-#
-#
-#
-#
-# how I think response should work
-# func return big json
-# parse it as a dictionary
-# put args to render_template#
+@ app.route("/credit-card", methods=["POST"])
+def credit_post():
+    data = request.get_json()
+    print(data)
 
-# good article about python to js and back with ajax
-#
-# https://stackoverflow.com/questions/52484647/sending-json-data-from-python-to-javascript-and-accessing-them
+    return "200"
+    # return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
