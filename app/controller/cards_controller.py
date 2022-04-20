@@ -1,10 +1,22 @@
 class Default:
-    pass
+    def __init__(self) -> None:
+        pass
 
 
 class Credit(Default):
-    pass
+    def __init__(self) -> None:
+        super().__init__()
+
+    def get_fast_filter_cards(self):
+        pass
+
+    def get_full_filter_cards(self):
+        pass
 
 
 class Debit(Default):
-    pass
+    def __init__(self) -> None:
+        super().__init__()
+
+    def get_banks_filter_card(self):
+        pass

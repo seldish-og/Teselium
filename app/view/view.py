@@ -1,4 +1,4 @@
-import json
+from .api import generate_key_api
 from model import session_db
 from flask import Flask, redirect, render_template, request
 from .auth_forms import LoginForm, SignUpForm
@@ -6,7 +6,13 @@ from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__, template_folder='../templates',
             static_folder='../static')
-app.config['SECRET_KEY'] = '8222584161030350316'
+try:
+    secret_key = generate_key_api.generate_key()
+except Exception as ex:
+    secret_key = generate_key_api.generate_default_key()
+
+
+app.config['SECRET_KEY'] = secret_key
 
 session_db.global_init("model/sqlite_db/test.db")
 
