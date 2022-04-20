@@ -16,14 +16,14 @@ def generate_key():
     hashed_key = int(hashlib.sha256(response.encode(
         'utf-8')).hexdigest(), 20) % 16**8
 
-    return hashed_key
+    return str(hashed_key)
 
 
 def generate_default_key():
     random_key = str(random.randint(1, 10000000000))
     hashed_key = int(hashlib.sha256(random_key.encode(
         'utf-8')).hexdigest(), 20) % 16**8
-    return hashed_key
+    return str(hashed_key)
 
 
 # generate_key()

@@ -79,5 +79,5 @@ def credit_post():
     data = request.get_json()
     print(data)
 
-    return "200"
+    return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
     # return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
