@@ -1,4 +1,5 @@
 Flask
+flask_wtf
 sqlalchemy
 werkzeug
 psycopg2

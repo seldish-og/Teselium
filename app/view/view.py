@@ -54,7 +54,7 @@ def cards():
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
 
 
-@app.route("/credit-card/", methods=["GET"])
+@app.route("/credit-card", methods=["GET"])
 def credit_cards():
     filter_value = request.args.get("filter_value")
     if filter_value:
