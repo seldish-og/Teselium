@@ -1,4 +1,5 @@
 import json
+from model import db_session
 from flask import Flask, redirect, render_template, request
 from .auth_forms import LoginForm, SignUpForm
 from werkzeug.exceptions import HTTPException
@@ -6,6 +7,7 @@ from werkzeug.exceptions import HTTPException
 app = Flask(__name__, template_folder='../templates',
             static_folder='../static')
 app.config['SECRET_KEY'] = '8222584161030350316'
+db_session.global_init("db/blogs.db")
 
 
 @app.errorhandler(404)
