@@ -2,7 +2,7 @@ import sqlalchemy
 from ..settings.session_db import SqlAlchemyBase
 
 
-class User(SqlAlchemyBase):
+class Auth_model(SqlAlchemyBase):
     __tablename__ = 'users'
 
     id = sqlalchemy.Column(

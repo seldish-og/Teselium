@@ -43,18 +43,19 @@ def auth():
     if login_form.validate_on_submit():
         input_email = login_form.email.data
         input_password = login_form.password.data
-        print(input_email)
-        print(input_password)
+
         login_controller = auth_controller.LoginController(
             input_email, input_password)
+
+        login_controller.get_data_from_db()
         comparrison_result = login_controller.wrapper()
-        print(comparrison_result)
+        print("            {} - COMPARRISON RESULT".format(comparrison_result))
 
         if comparrison_result:
-            print("logged in")
+            print("LOGGED IN")
             return redirect('/')
         else:
-            print("not looged in {}".format(comparrison_result))
+            print("NOT LOGGED IN")
             return redirect('/auth')
 
     return render_template("other_templates/auth_page.html", sign_up_form=sign_up_form, login_form=login_form, title="Sign In")
