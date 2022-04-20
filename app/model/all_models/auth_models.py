@@ -1,6 +1,5 @@
-import datetime
 import sqlalchemy
-from settings.session_db import SqlAlchemyBase
+from ..settings.session_db import SqlAlchemyBase
 
 
 class User(SqlAlchemyBase):
