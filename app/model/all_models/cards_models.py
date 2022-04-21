@@ -1,4 +1,3 @@
-from enum import unique
 import sqlalchemy
 from ..settings.session_db import SqlAlchemyBase
 

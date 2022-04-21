@@ -1,4 +1,5 @@
 import json
+import ast
 from api import generate_key_api
 from controller import auth_controller, cards_controller
 from model import session_db
@@ -109,20 +110,19 @@ def cards():
 
 @app.route("/credit-card", methods=["GET"])
 def credit_cards():
-    filter_type = request.args.get("filter_value")
+    filter_type = request.args.get("filter_type")
 
     if not filter_type:
         filter_type = "default"
+
     full_filter_data = request.args.get("data")
+    print(f"FULL fILTR DATA {full_filter_data}")
+    if full_filter_data:
+        full_filter_data = ast.literal_eval(full_filter_data)
 
-    # print()
-    # print("this is data   " + full_filter_data)
-    # print()
-
-    full_filter_data_json = json.loads(full_filter_data)
     credit_controller = cards_controller.Credit(
         filter_type=filter_type,
-        full_filter_data=full_filter_data_json
+        full_filter_data=full_filter_data
     )
     render_data = credit_controller.get_cards()
 
@@ -133,7 +133,7 @@ def credit_cards():
 def credit_post():
     full_filter_data = request.get_json()
 
-    return redirect(f"/credit-card?filter_value=fuck&data={full_filter_data}")
+    return redirect(f"/credit-card?filter_value=full_filter&data={full_filter_data}")
 
 
 if __name__ == '__main__':
