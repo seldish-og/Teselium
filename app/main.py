@@ -43,11 +43,22 @@ def auth():
     sign_up_form = SignUpForm()
 
     if sign_up_form.validate_on_submit():
-        print("signed up")
-        print(sign_up_form.username.data)
-        print(sign_up_form.email.data)
-        print(sign_up_form.password.data)
-        return redirect('/')
+        reg_input_username = sign_up_form.username.data
+        reg_input_email = sign_up_form.email.data
+        reg_input_password = sign_up_form.password.data
+        data = {
+            "name": reg_input_username,
+            "email": reg_input_email,
+            "password": reg_input_password
+        }
+
+        sign_up_controller = auth_controller.SignUpController(data)
+        registr_user = sign_up_controller.add_user_db()
+        if registr_user["registr_result"]:
+            print("signed up")
+            login_user(registr_user["user"])
+            return redirect('/')
+        return redirect("/auth")
 
     if login_form.validate_on_submit():
         input_email = login_form.email.data
