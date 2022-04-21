@@ -1,3 +1,4 @@
+import json
 from api import generate_key_api
 from controller import auth_controller, cards_controller
 from model import session_db
@@ -89,39 +90,50 @@ def logout():
     return redirect("/")
 
 
-@ app.route("/creators")
+@app.route("/creators")
 def creators():
     return render_template("creators_template/creators_page.html", title="Creators")
 
 
-@ app.route("/banks")
+@app.route("/banks")
 def banks():
     return render_template("banks_template/banks_page.html", title="Banks")
 
 
-@ app.route("/debit-card")
+@app.route("/debit-card")
 def cards():
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
 
+# good cards but no perfect
 
-@ app.route("/credit-card", methods=["GET"])
+
+@app.route("/credit-card", methods=["GET"])
 def credit_cards():
-    filter_value = request.args.get("filter_value")
-    if filter_value:
-        print(filter_value)
-    else:
-        print("defff")
-    # generate_cards(argument)
+    filter_type = request.args.get("filter_value")
+
+    if not filter_type:
+        filter_type = "default"
+    full_filter_data = request.args.get("data")
+
+    # print()
+    # print("this is data   " + full_filter_data)
+    # print()
+
+    full_filter_data_json = json.loads(full_filter_data)
+    credit_controller = cards_controller.Credit(
+        filter_type=filter_type,
+        full_filter_data=full_filter_data_json
+    )
+    render_data = credit_controller.get_cards()
+
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
 
 
-@ app.route("/credit-card", methods=["POST"])
+@app.route("/credit-card", methods=["POST"])
 def credit_post():
-    data = request.get_json()
-    print(data)
+    full_filter_data = request.get_json()
 
-    return redirect("/credit-card?filter_value=fuck")
-    # return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
+    return redirect(f"/credit-card?filter_value=fuck&data={full_filter_data}")
 
 
 if __name__ == '__main__':

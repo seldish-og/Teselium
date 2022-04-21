@@ -1,11 +1,14 @@
-class Default:
-    def __init__(self) -> None:
-        pass
+from model.settings import session_db
+from model.all_models.cards_models import CreditCards
 
 
-class Credit(Default):
-    def __init__(self) -> None:
-        super().__init__()
+class Credit:
+    def __init__(self, filter_type,
+                 full_filter_data=None) -> None:
+        self.filter_type = filter_type
+        self.full_filter_data = full_filter_data
+        print(filter_type,
+              full_filter_data)
 
     def get_fast_filter_cards(self):
         pass
@@ -14,9 +17,9 @@ class Credit(Default):
         pass
 
 
-class Debit(Default):
+class Debit:
     def __init__(self) -> None:
-        super().__init__()
+        pass
 
     def get_banks_filter_card(self):
         pass

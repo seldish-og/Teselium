@@ -3,7 +3,7 @@ import sqlalchemy
 from ..settings.session_db import SqlAlchemyBase
 
 
-class Cards(SqlAlchemyBase):
+class CreditCards(SqlAlchemyBase):
     __tablename__ = 'cards'
 
     id = sqlalchemy.Column(
