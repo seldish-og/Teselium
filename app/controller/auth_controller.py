@@ -1,10 +1,14 @@
+from tabnanny import check
+
+from click import password_option
+from model.all_models.auth_models import User
 from model.settings import session_db
 from model.all_models import auth_models
 
 
 class LoginController:
     def __init__(self, email, password) -> None:
-        print("            {} {} - DATA FROM USER".format(email, password))
+        print("            DATA FROM USER - {} {} ".format(email, password))
         self.input_email = email
         self.input_password = password
 
@@ -12,31 +16,27 @@ class LoginController:
         self.db_password = ""
 
     def get_data_from_db(self):
-        auth = auth_models.Auth_model()
         db_sess = session_db.create_session()
-        dd = db_sess.query(auth_models.Auth_model).first()
-        print("            {} - DATA FROM DB".format(dd.name))
+        user = db_sess.query(User).filter(
+            User.email == self.input_email).first()
+        print("            SEARCH RESULT - {} ".format(user))
+        return user
 
-    def compare_email(self):
-        if self.input_email == self.db_email:
+    def check_password(self, db_email):
+        if self.input_password == db_email:
             return True
-        else:
-            return False
-
-    def compare_password(self):
-        if self.input_password == self.db_password:
-            return True
-        else:
-            return False
+        return False
 
     def wrapper(self):
-        email_comparrison = self.compare_email()
-        password_comparrison = self.compare_password()
-
-        if email_comparrison and password_comparrison:
-            return True
-        else:
-            return False
+        user = self.get_data_from_db()
+        if user:
+            password_correct = self.check_password(user.password)
+            if password_correct:
+                print("            USER AND password_correct True ")
+                return {"comparrison_result": True, "user": user}
+            else:
+                return {"comparrison_result": False}
+        return {"comparrison_result": False}
 
 
 class SignUpController:

@@ -1,8 +1,9 @@
 import sqlalchemy
+from flask_login import UserMixin
 from ..settings.session_db import SqlAlchemyBase
 
 
-class Auth_model(SqlAlchemyBase):
+class User(SqlAlchemyBase, UserMixin):
     __tablename__ = 'users'
 
     id = sqlalchemy.Column(

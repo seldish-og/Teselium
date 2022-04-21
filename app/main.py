@@ -1,21 +1,30 @@
-# from view import app
 from api import generate_key_api
 from controller import auth_controller, cards_controller
 from model import session_db
 from flask import Flask, redirect, render_template, request
+from flask_login import LoginManager, login_user
+from model.all_models.auth_models import User
 from view.auth_forms import LoginForm, SignUpForm
-# from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
+
 try:
     secret_key = generate_key_api.generate_key()
 except Exception as ex:
     secret_key = generate_key_api.generate_default_key()
-
-
 app.config['SECRET_KEY'] = secret_key
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+
 session_db.global_init("model/sqlite_db/test.db")
+# db_sess = session_db.create_session()
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    db_sess = session_db.create_session()
+    return db_sess.query(User).get(user_id)
 
 
 @app.errorhandler(404)
@@ -47,13 +56,14 @@ def auth():
         login_controller = auth_controller.LoginController(
             input_email, input_password)
 
-        login_controller.get_data_from_db()
         comparrison_result = login_controller.wrapper()
-        print("            {} - COMPARRISON RESULT".format(comparrison_result))
 
-        if comparrison_result:
+        print(f"              COMPARRISON RESULT - {comparrison_result}")
+        if comparrison_result["comparrison_result"]:
             print("LOGGED IN")
+            login_user(comparrison_result["user"])
             return redirect('/')
+
         else:
             print("NOT LOGGED IN")
             return redirect('/auth')
