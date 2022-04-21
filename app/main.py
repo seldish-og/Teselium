@@ -2,7 +2,7 @@ from api import generate_key_api
 from controller import auth_controller, cards_controller
 from model import session_db
 from flask import Flask, redirect, render_template, request
-from flask_login import LoginManager, login_user
+from flask_login import LoginManager, login_user, logout_user, login_required
 from model.all_models.auth_models import User
 from view.auth_forms import LoginForm, SignUpForm
 
@@ -69,6 +69,13 @@ def auth():
             return redirect('/auth')
 
     return render_template("other_templates/auth_page.html", sign_up_form=sign_up_form, login_form=login_form, title="Sign In")
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
 
 
 @ app.route("/creators")

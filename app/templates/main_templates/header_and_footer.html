@@ -25,9 +25,13 @@
                 <li class="navigation_item"><a href="/creators">creators</a></li>
             </ul>
         </nav>
+        {% if current_user.is_authenticated %}
+            <a class="navigation_item" href="/logout">Log Out</a>
+        {% else %}
         <a href="/auth">
             <button class="login-button button">sign in</button>
         </a>
+        {% endif %}
     </header>
 
     </section>
