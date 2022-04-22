@@ -133,7 +133,7 @@ def credit_cards():
 def credit_post():
     full_filter_data = request.get_json()
 
-    return redirect(f"/credit-card?filter_value=full_filter&data={full_filter_data}")
+    return redirect(f"/credit-card?filter_type=full_filter&data={full_filter_data}")
 
 
 if __name__ == '__main__':

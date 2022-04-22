@@ -76,8 +76,10 @@ class Credit:
             cards = self.get_default_cards()
         if self.filter_type in ["lowest_fee", "best_cashback", "lowest_APR"]:
             cards = self.get_fast_filter_cards()
+
         if self.filter_type == "full_filter":
             cards = self.get_full_filter_cards()
+            print("I SUCK")
 
         return cards
 
