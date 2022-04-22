@@ -13,12 +13,24 @@ class Credit:
         print(filter_type,
               full_filter_data)
 
-    def default_cards(self):
-        default_cards_result = {}
+    def get_default_cards(self):
         db_response = self.db_sess.query(CreditCards).all()
+        default_cards_list = []
+        for card in db_response:
+            cards = {}
+            cards["card_name"] = card.card_name
+            cards["cashback"] = card.cashback
+            cards["annual_fee"] = card.annual_fee
+            cards["credit_score"] = card.credit_score
+            cards["network"] = card.network
+            cards["regular_apr"] = card.regular_apr
+            cards["bank_name"] = card.bank_name
+            cards["img_path"] = card.regular_apr
+            default_cards_list.append(cards)
+        return default_cards_list
 
     def get_fast_filter_cards(self):
-        fast_filter_cards_result = {}
+
         if self.filter_type == "lowest_fee":
             db_response = self.db_sess.query(LowestFee).all()
 
@@ -27,27 +39,47 @@ class Credit:
 
         if self.filter_type == "lowest_APR":
             db_response = self.db_sess.query(LowestApr).all()
-
-        for row in db_response:
-            fast_filter_cards_result["card_name"] = row.card_name
-            fast_filter_cards_result["cashback"] = row.cashback
-            fast_filter_cards_result["annual_fee"] = row.annual_fee
-            fast_filter_cards_result["credit_score"] = row.credit_score
-            fast_filter_cards_result["network"] = row.network
-            fast_filter_cards_result["regular_apr"] = row.regular_apr
-            fast_filter_cards_result["bank_name"] = row.bank_name
-            fast_filter_cards_result["img_path"] = row.regular_apr
-        return fast_filter_cards_result
+        result_cards = []
+        for card in db_response:
+            cards = {}
+            cards["card_name"] = card.card_name
+            cards["cashback"] = card.cashback
+            cards["annual_fee"] = card.annual_fee
+            cards["credit_score"] = card.credit_score
+            cards["network"] = card.network
+            cards["regular_apr"] = card.regular_apr
+            cards["bank_name"] = card.bank_name
+            cards["img_path"] = card.regular_apr
+            result_cards.append(cards)
+        return result_cards
 
     def get_full_filter_cards(self):
-        pass
+        db_response = self.db_sess.query(CreditCards).all()
+        full_filter_cards_list = []
+        for card in db_response:
+            cards = {}
+            cards["card_name"] = card.card_name
+            cards["cashback"] = card.cashback
+            cards["annual_fee"] = card.annual_fee
+            cards["credit_score"] = card.credit_score
+            cards["network"] = card.network
+            cards["regular_apr"] = card.regular_apr
+            cards["bank_name"] = card.bank_name
+            cards["img_path"] = card.regular_apr
+            full_filter_cards_list.append(cards)
+        return full_filter_cards_list
 
     def get_cards(self):
-        result = ""
+        cards = ""
         if self.filter_type == "default":
-            result = self.default_cards()
-        if self.filter_type in ["lowest_fee", "best_cashback", "lowest_APR"]
-        print(self.get_fast_filter_cards())
+            print("hh")
+            cards = self.get_default_cards()
+        if self.filter_type in ["lowest_fee", "best_cashback", "lowest_APR"]:
+            cards = self.get_fast_filter_cards()
+        if self.filter_type == "full_filter":
+            cards = self.get_full_filter_cards()
+
+        return cards
 
 
 class Debit:

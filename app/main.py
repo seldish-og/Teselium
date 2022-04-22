@@ -125,8 +125,8 @@ def credit_cards():
         full_filter_data=full_filter_data
     )
     render_data = credit_controller.get_cards()
-
-    return render_template("cards_templates/credit_cards_page.html", title="Credit cards")
+    print(render_data)
+    return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
 
 
 @app.route("/credit-card", methods=["POST"])

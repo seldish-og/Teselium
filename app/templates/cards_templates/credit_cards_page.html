@@ -144,47 +144,50 @@
                 </div>
             </div>
 
+            
             <div class="cards-container bg">
+                {% for card in render_data %}
                 <div class="card">
                     <div class="left_card_container">
-                        <img src="test.png" alt="tt">
+                        <img src=static/images/{{ card["img_path"] }} alt="card image">
                         <a href="#">
                             <button>Apply</button>
                         </a>
                     </div>
-
+                    
                     <div class="right_card_container">
-                        <h3>Card Name</h3>
+                        <h3>{{ card["card_name"] }}</h3>
                         <div class="description-container">
                             <div class="description-item">
                                 <p>Cashback</p>
-                                <span>2-5 %</span>
+                                <span>{{ card["cashback"] }} %</span>
                             </div>
                             <div class="description-item">
                                 <p>Annual Fee</p>
-                                <span>5 %</span>
+                                <span>{{ card["annual_fee"] }} %</span>
                             </div>
                             <div class="description-item">
                                 <p>Credit Score</p>
-                                <span>690-850</span>
+                                <span>{{ card["credit_score"] }}</span>
                             </div>
                             <div class="description-item">
                                 <p>Network</p>
-                                <span>MasterCard</span>
+                                <span>{{ card["network"] }}</span>
                             </div>
                             <div class="description-item">
                                 <p>Regular APR</p>
-                                <span>0 %</span>
+                                <span>{{ card["regular_apr"] }} %</span>
                             </div>
                             <div class="description-item">
                                 <p>Bank</p>
-                                <span>Fifth Third Bank</span>
+                                <span>{{ card["bank_name"] }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                {% endfor %}
             </div>
+            
         </div>
     </form>
 </section>
