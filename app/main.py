@@ -116,7 +116,7 @@ def credit_cards():
         filter_type = "default"
 
     full_filter_data = request.args.get("data")
-    print(f"FULL fILTR DATA {full_filter_data}")
+    # print(f"FULL fILTR DATA {full_filter_data}")
     if full_filter_data:
         full_filter_data = ast.literal_eval(full_filter_data)
 
@@ -125,14 +125,16 @@ def credit_cards():
         full_filter_data=full_filter_data
     )
     render_data = credit_controller.get_cards()
-    print(render_data)
+    print()
+    print("DATA", render_data)
+    print()
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
 
 
 @app.route("/credit-card", methods=["POST"])
 def credit_post():
     full_filter_data = request.get_json()
-
+    print("IM IN")
     return redirect(f"/credit-card?filter_type=full_filter&data={full_filter_data}")
 
 

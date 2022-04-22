@@ -30,3 +30,6 @@ document.forms.filter_form.onsubmit = function () {
   console.log(submitted_form);
   return false;
 };
+
+// rewrite script
+// must send GET request with filtertype and data in body

@@ -72,7 +72,7 @@ class Credit:
     def get_cards(self):
         cards = ""
         if self.filter_type == "default":
-            print("hh")
+            print("default")
             cards = self.get_default_cards()
         if self.filter_type in ["lowest_fee", "best_cashback", "lowest_APR"]:
             cards = self.get_fast_filter_cards()
@@ -80,7 +80,7 @@ class Credit:
         if self.filter_type == "full_filter":
             cards = self.get_full_filter_cards()
             print("I SUCK")
-
+        print(cards)
         return cards
 
 
