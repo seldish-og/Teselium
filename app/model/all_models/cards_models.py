@@ -43,3 +43,26 @@ class CreditCards(SqlAlchemyBase):
         unique=True,
         nullable=True
     )
+
+
+class DebitCards(SqlAlchemyBase):
+    __tablename__ = 'cards'
+
+    id = sqlalchemy.Column(
+        sqlalchemy.Integer,
+        primary_key=True,
+        autoincrement=True
+    )
+    card_name = sqlalchemy.Column(
+        sqlalchemy.String,
+        nullable=True
+    )
+    bank_name = sqlalchemy.Column(
+        sqlalchemy.String,
+        nullable=True
+    )
+    img_path = sqlalchemy.Column(
+        sqlalchemy.String,
+        unique=True,
+        nullable=True
+    )

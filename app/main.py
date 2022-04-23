@@ -1,7 +1,7 @@
 import json
 import ast
 from api import generate_key_api
-from controller import auth_controller, cards_controller
+from controller import auth_controller, credit_cards_controller, debit_cards_controller
 from model import session_db
 from flask import Flask, redirect, render_template, request
 from flask_login import LoginManager, login_user, logout_user, login_required
@@ -103,39 +103,23 @@ def banks():
 
 @app.route("/debit-card")
 def cards():
+    debit_controller = debit_cards_controller.generate_cards()
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
-
-# good cards but no perfect
 
 
 @app.route("/credit-card", methods=["GET"])
 def credit_cards():
     filter_type = request.args.get("filter_type")
-
     if not filter_type:
         filter_type = "default"
 
-    full_filter_data = request.args.get("data")
-    # print(f"FULL fILTR DATA {full_filter_data}")
-    if full_filter_data:
-        full_filter_data = ast.literal_eval(full_filter_data)
+    credit_controller = credit_cards_controller.Credit(filter_type=filter_type)
+    render_data = credit_controller.generate_cards()
 
-    credit_controller = cards_controller.Credit(
-        filter_type=filter_type,
-        full_filter_data=full_filter_data
-    )
-    render_data = credit_controller.get_cards()
     print()
     print("DATA", render_data)
     print()
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
-
-
-@app.route("/credit-card", methods=["POST"])
-def credit_post():
-    full_filter_data = request.get_json()
-    print("IM IN")
-    return redirect(f"/credit-card?filter_type=full_filter&data={full_filter_data}")
 
 
 if __name__ == '__main__':
