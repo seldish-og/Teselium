@@ -117,7 +117,7 @@ def credit_cards():
     render_data = credit_controller.generate_cards()
 
     print()
-    print("DATA", render_data)
+    print("RENDER DATA", render_data)
     print()
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
 

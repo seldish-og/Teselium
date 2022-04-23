@@ -30,7 +30,14 @@ class Credit:
         return response
 
     def get_banks_cards_data(self):
-        db_response = self.
+        bank_name = self.filter_type[5:]
+        print(bank_name)
+
+        db_response = self.db_sess.query(
+            CreditCards).filter(CreditCards.bank_name == bank_name)
+
+        response = self.format_responce(db_response)
+        return response
 
     def get_fast_filter_cards_data(self):
         if self.filter_type == "lowest_fee":
@@ -56,5 +63,8 @@ class Credit:
             print("fast_filter")
             cards = self.get_fast_filter_cards_data()
 
-        print(cards)
+        if "bank" in self.filter_type:
+            cards = self.get_banks_cards_data()
+
+        print("RETURN FROM CONTROLLER CARDS", cards)
         return cards

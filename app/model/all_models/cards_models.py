@@ -46,7 +46,7 @@ class CreditCards(SqlAlchemyBase):
 
 
 class DebitCards(SqlAlchemyBase):
-    __tablename__ = 'cards'
+    __tablename__ = 'debit_cards'
 
     id = sqlalchemy.Column(
         sqlalchemy.Integer,
