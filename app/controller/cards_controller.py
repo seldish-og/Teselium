@@ -25,7 +25,7 @@ class Credit:
             cards["network"] = card.network
             cards["regular_apr"] = card.regular_apr
             cards["bank_name"] = card.bank_name
-            cards["img_path"] = card.regular_apr
+            cards["img_path"] = card.img_path
             default_cards_list.append(cards)
         return default_cards_list
 
@@ -49,7 +49,7 @@ class Credit:
             cards["network"] = card.network
             cards["regular_apr"] = card.regular_apr
             cards["bank_name"] = card.bank_name
-            cards["img_path"] = card.regular_apr
+            cards["img_path"] = card.img_path
             result_cards.append(cards)
         return result_cards
 
@@ -65,7 +65,7 @@ class Credit:
             cards["network"] = card.network
             cards["regular_apr"] = card.regular_apr
             cards["bank_name"] = card.bank_name
-            cards["img_path"] = card.regular_apr
+            cards["img_path"] = card.img_path
             full_filter_cards_list.append(cards)
         return full_filter_cards_list
 
