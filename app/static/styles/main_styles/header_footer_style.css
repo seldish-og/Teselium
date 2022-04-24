@@ -162,7 +162,7 @@ ul {
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #ffffff;
   margin: 0 10px 10px 0;
   text-align: center;
   line-height: 40px;
@@ -172,10 +172,13 @@ ul {
 }
 
 .footer-col .social-links a:hover {
-  color: #070d59;
-  background-color: #070d59;
+  color: #ffffff;
+  background-color: #333ba8;
 }
 
+.fa-github-f{
+  margin-top: 6px;
+}
 /*responsive*/
 @media (max-width: 767px) {
   .footer-col {
