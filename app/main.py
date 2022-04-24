@@ -103,7 +103,8 @@ def banks():
 
 @app.route("/debit-card")
 def cards():
-    debit_controller = debit_cards_controller.generate_cards()
+    debit_controller = debit_cards_controller.Debit()
+    render_data = debit_controller.generate_cards()
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
 
 
