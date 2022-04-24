@@ -20,7 +20,6 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 session_db.global_init("model/sqlite_db/test.db")
-# db_sess = session_db.create_session()
 
 
 @login_manager.user_loader
@@ -71,15 +70,13 @@ def auth():
 
         comparrison_result = login_controller.wrapper()
 
-        print(f"              COMPARRISON RESULT - {comparrison_result}")
         if comparrison_result["comparrison_result"]:
             print("LOGGED IN")
             login_user(comparrison_result["user"])
             return redirect('/')
 
-        else:
-            print("NOT LOGGED IN")
-            return redirect('/auth')
+        print("NOT LOGGED IN")
+        return redirect('/auth')
 
     return render_template("other_templates/auth_page.html", sign_up_form=sign_up_form, login_form=login_form, title="Sign In")
 
@@ -91,9 +88,16 @@ def logout():
     return redirect("/")
 
 
-@app.route("/creators")
+@app.route("/creators", methods=['POST', 'GET'])
 def creators():
-    return render_template("creators_template/creators_page.html", title="Creators")
+    if request.method == 'GET':
+        return render_template("creators_template/creators_page.html", title="Creators")
+    elif request.method == 'POST':
+        resume_file = request.files['file']
+
+        name = resume_file.filename
+        resume_file.save(f"resumes/{name}")
+        return redirect("/")
 
 
 @app.route("/banks")
@@ -110,10 +114,6 @@ def cards():
     debit_controller = debit_cards_controller.Debit(filter_type=filter_type)
     render_data = debit_controller.generate_cards()
 
-    print()
-    print("RENDER DATA", render_data)
-    print()
-
     return render_template("cards_templates/debit_cards_page.html", title="Debit cards", render_data=render_data)
 
 
@@ -125,10 +125,6 @@ def credit_cards():
 
     credit_controller = credit_cards_controller.Credit(filter_type=filter_type)
     render_data = credit_controller.generate_cards()
-
-    print()
-    print("RENDER DATA", render_data)
-    print()
 
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
 
