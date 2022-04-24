@@ -103,9 +103,18 @@ def banks():
 
 @app.route("/debit-card")
 def cards():
-    debit_controller = debit_cards_controller.Debit()
+    filter_type = request.args.get("filter_type")
+    if not filter_type:
+        filter_type = "default"
+
+    debit_controller = debit_cards_controller.Debit(filter_type=filter_type)
     render_data = debit_controller.generate_cards()
-    return render_template("cards_templates/debit_cards_page.html", title="Debit cards")
+
+    print()
+    print("RENDER DATA", render_data)
+    print()
+
+    return render_template("cards_templates/debit_cards_page.html", title="Debit cards", render_data=render_data)
 
 
 @app.route("/credit-card", methods=["GET"])
@@ -120,6 +129,7 @@ def credit_cards():
     print()
     print("RENDER DATA", render_data)
     print()
+
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
 
 
