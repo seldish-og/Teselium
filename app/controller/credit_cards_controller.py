@@ -21,6 +21,7 @@ class Credit:
             cards["regular_apr"] = card.regular_apr
             cards["bank_name"] = card.bank_name
             cards["img_path"] = card.img_path
+            cards["link_to_bank"] = card.link_to_bank
             cards_list.append(cards)
         return cards_list
 
@@ -41,13 +42,16 @@ class Credit:
 
     def get_fast_filter_cards_data(self):
         if self.filter_type == "lowest_fee":
-            db_response = self.db_sess.query(LowestFee).all()
+            db_response = self.db_sess.query(CreditCards).filter(
+                CreditCards.annual_fee == 0)
 
         if self.filter_type == "best_cashback":
-            db_response = self.db_sess.query(BestCashBack).all()
+            db_response = self.db_sess.query(CreditCards).filter(
+                CreditCards.cashback > 3)
 
         if self.filter_type == "lowest_APR":
-            db_response = self.db_sess.query(LowestApr).all()
+            db_response = self.db_sess.query(CreditCards).filter(
+                CreditCards.regular_apr == 0)
 
         response = self.format_responce(db_response)
         return response
@@ -64,7 +68,7 @@ class Credit:
             cards = self.get_fast_filter_cards_data()
 
         if "bank" in self.filter_type:
+            print("bank_filter")
             cards = self.get_banks_cards_data()
 
-        print("RETURN FROM CONTROLLER CARDS", cards)
         return cards

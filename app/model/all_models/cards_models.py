@@ -3,7 +3,7 @@ from ..settings.session_db import SqlAlchemyBase
 
 
 class CreditCards(SqlAlchemyBase):
-    __tablename__ = 'cards'
+    __tablename__ = 'credit_cards'
 
     id = sqlalchemy.Column(
         sqlalchemy.Integer,
@@ -43,6 +43,10 @@ class CreditCards(SqlAlchemyBase):
         unique=True,
         nullable=True
     )
+    link_to_bank = sqlalchemy.Column(
+        sqlalchemy.String,
+        nullable=True
+    )
 
 
 class DebitCards(SqlAlchemyBase):
@@ -57,7 +61,23 @@ class DebitCards(SqlAlchemyBase):
         sqlalchemy.String,
         nullable=True
     )
+    cashback = sqlalchemy.Column(
+        sqlalchemy.Integer,
+        nullable=True
+    )
+    annual_fee = sqlalchemy.Column(
+        sqlalchemy.Integer,
+        nullable=True
+    )
+    network = sqlalchemy.Column(
+        sqlalchemy.String,
+        nullable=True
+    )
     bank_name = sqlalchemy.Column(
+        sqlalchemy.String,
+        nullable=True
+    )
+    link_to_bank = sqlalchemy.Column(
         sqlalchemy.String,
         nullable=True
     )

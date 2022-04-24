@@ -39,17 +39,17 @@
     margin: 20px;
   }
   
-  .left_card_container button {
+  .left_card_container span {
     padding: 9px 18px;
     font-size: 100%;
     border-radius: 19px;
-  
+    
     background: #070d59;
     color: #fff;
     text-transform: uppercase;
   }
   
-  .left_card_container button:hover {
+  .left_card_container span:hover {
     background: #333ba8;
     cursor: pointer;
   }
