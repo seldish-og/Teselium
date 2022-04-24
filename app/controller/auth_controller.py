@@ -1,10 +1,5 @@
-from pickle import TRUE
-from tabnanny import check
-
-from click import password_option
 from model.all_models.auth_models import User
 from model.settings import session_db
-from model.all_models import auth_models
 
 
 class LoginController:

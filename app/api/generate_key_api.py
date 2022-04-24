@@ -1,6 +1,7 @@
 import hashlib
-import requests
 import random
+
+import requests
 
 
 def generate_key():
@@ -14,7 +15,7 @@ def generate_key():
     response = requests.get(url, params=params).text
 
     hashed_key = int(hashlib.sha256(response.encode(
-        'utf-8')).hexdigest(), 20) % 16**8
+        'utf-8')).hexdigest(), 20) % 16 ** 8
 
     return str(hashed_key)
 
@@ -22,9 +23,8 @@ def generate_key():
 def generate_default_key():
     random_key = str(random.randint(1, 10000000000))
     hashed_key = int(hashlib.sha256(random_key.encode(
-        'utf-8')).hexdigest(), 20) % 16**8
+        'utf-8')).hexdigest(), 20) % 16 ** 8
     return str(hashed_key)
-
 
 # generate_key()
 # generate_default_key()

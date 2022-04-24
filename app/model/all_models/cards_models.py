@@ -1,4 +1,5 @@
 import sqlalchemy
+
 from ..settings.session_db import SqlAlchemyBase
 
 

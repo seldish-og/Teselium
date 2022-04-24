@@ -33,7 +33,7 @@
                             <a href="/credit-card?filter_type=lowest_APR">
                                 <li>Lowest APR</li>
                             </a>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -46,35 +46,59 @@
                     <div class="banks-filter-container bg">
                         <span class="banks-filter-h">banks:</span>
                         <ul class="banks-filter-list">
-                            <a href="/credit-card?filter_type=bank-Bank-of-America"><li>Bank of America</li></a>
-                            <a href="/credit-card?filter_type=bank-Capital-One-360"><li>capital one 360</li></a>
-                            <a href="/credit-card?filter_type=bank-Citibank"><li>citibank</li></a>
-                            <a href="/credit-card?filter_type=bank-Fifth-Third-Bank"><li>fifth third bank</li></a>
-                            <a href="/credit-card?filter_type=bank-HSBC"><li>HSBC</li></a>
-                            <a href="/credit-card?filter_type=bank-Chase"><li>JP chase</li></a>
-                            <a href="/credit-card?filter_type=bank-PNC-Bank"><li>PNC</li></a>
-                            <a href="/credit-card?filter_type=bank-Santander"><li>santander</li></a>
-                            <a href="/credit-card?filter_type=bank-TD-Bank"><li>TD bank</li></a>
-                            <a href="/credit-card?filter_type=bank-Truist-Bank"><li>truist bank</li></a>
-                            <a href="/credit-card?filter_type=bank-US-Bank"><li>US bank</li></a>
-                            <a href="/credit-card?filter_type=bank-Wells-Fargo"><li>wells fargo</li></a>
+                            <a href="/credit-card?filter_type=bank-Bank-of-America">
+                                <li>Bank of America</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Capital-One-360">
+                                <li>capital one 360</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Citibank">
+                                <li>citibank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Fifth-Third-Bank">
+                                <li>fifth third bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-HSBC">
+                                <li>HSBC</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Chase">
+                                <li>JP chase</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-PNC-Bank">
+                                <li>PNC</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Santander">
+                                <li>santander</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-TD-Bank">
+                                <li>TD bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Truist-Bank">
+                                <li>truist bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-US-Bank">
+                                <li>US bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Wells-Fargo">
+                                <li>wells fargo</li>
+                            </a>
                         </ul>
                     </div>
 
                 </div>
             </div>
 
-            
+
             <div class="cards-container bg">
                 {% for card in render_data %}
                 <div class="card">
                     <div class="left_card_container">
                         <img src=static/{{ card["img_path"] }} alt="card image">
                         <a href={{ card["link_to_bank"] }}">
-                            <span>Apply</span>
+                        <span>Apply</span>
                         </a>
                     </div>
-                    
+
                     <div class="right_card_container">
                         <h3>{{ card["card_name"] }}</h3>
                         <div class="description-container">
@@ -107,7 +131,7 @@
                 </div>
                 {% endfor %}
             </div>
-            
+
         </div>
     </form>
 </section>

@@ -1,5 +1,5 @@
-from model.settings import session_db
 from model.all_models.cards_models import CreditCards
+from model.settings import session_db
 
 
 class Credit:

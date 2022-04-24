@@ -1,10 +1,8 @@
-import json
-import ast
 from api import generate_key_api
 from controller import auth_controller, credit_cards_controller, debit_cards_controller
-from model import session_db
 from flask import Flask, redirect, render_template, request
 from flask_login import LoginManager, login_user, logout_user, login_required
+from model import session_db
 from model.all_models.auth_models import User
 from view.auth_forms import LoginForm, SignUpForm
 
@@ -78,7 +76,8 @@ def auth():
         print("NOT LOGGED IN")
         return redirect('/auth')
 
-    return render_template("other_templates/auth_page.html", sign_up_form=sign_up_form, login_form=login_form, title="Sign In")
+    return render_template("other_templates/auth_page.html", sign_up_form=sign_up_form, login_form=login_form,
+                           title="Sign In")
 
 
 @app.route('/logout')
