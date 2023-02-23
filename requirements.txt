@@ -3,4 +3,4 @@ flask_wtf
 flask-login
 sqlalchemy
 werkzeug
-psycopg2
+waitress
