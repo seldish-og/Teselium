@@ -1,10 +1,12 @@
 from api import generate_key_api
-from controller import auth_controller, credit_cards_controller, debit_cards_controller
+from controller import (auth_controller, credit_cards_controller,
+                        debit_cards_controller)
 from flask import Flask, redirect, render_template, request
-from flask_login import LoginManager, login_user, logout_user, login_required
+from flask_login import LoginManager, login_required, login_user, logout_user
 from model import session_db
 from model.all_models.auth_models import User
 from view.auth_forms import LoginForm, SignUpForm
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -128,5 +130,5 @@ def credit_cards():
     return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
 
 
-if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+# if __name__ == '__main__':
+#     serve(app, host="0.0.0.0", port=8080)
