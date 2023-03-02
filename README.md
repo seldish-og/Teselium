@@ -5,7 +5,7 @@
 installation:
 
 1. clone this repo and install requirements.txt
-2. naviate to `/app` and run `waitress-serve --host 127.0.0.1 main:app `
+2. navigate to `./backend` and run `waitress-serve --host 127.0.0.1 main:app `
    this will start a production server. <br>
 
 ### Then go to localhost and enjoy website
