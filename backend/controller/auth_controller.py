@@ -13,8 +13,7 @@ class LoginController:
 
     def get_data_from_db(self):
         db_sess = session_db.create_session()
-        user = db_sess.query(User).filter(
-            User.email == self.input_email).first()
+        user = db_sess.query(User).filter(User.email == self.input_email).first()
         print("            SEARCH RESULT - {} ".format(user))
         return user
 
@@ -41,8 +40,7 @@ class SignUpController:
         self.input_username = data["name"]
         self.input_email = data["email"]
         self.input_password = data["password"]
-        print(self.input_username,
-              self.input_email, self.input_password)
+        print(self.input_username, self.input_email, self.input_password)
         self.db_sess = session_db.create_session()
 
     def check_username(self):

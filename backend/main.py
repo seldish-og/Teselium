@@ -1,6 +1,5 @@
 from api import generate_key_api
-from controller import (auth_controller, credit_cards_controller,
-                        debit_cards_controller)
+from controller import auth_controller, credit_cards_controller, debit_cards_controller
 from flask import Flask, redirect, render_template, request
 from flask_login import LoginManager, login_required, login_user, logout_user
 from model import session_db
@@ -14,7 +13,7 @@ try:
     secret_key = generate_key_api.generate_key()
 except Exception as ex:
     secret_key = generate_key_api.generate_default_key()
-app.config['SECRET_KEY'] = secret_key
+app.config["SECRET_KEY"] = secret_key
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -38,7 +37,7 @@ def index():
     return render_template("main_templates/main_page.html", title="Teselium")
 
 
-@app.route('/auth', methods=['GET', 'POST'])
+@app.route("/auth", methods=["GET", "POST"])
 def auth():
     login_form = LoginForm()
     sign_up_form = SignUpForm()
@@ -50,7 +49,7 @@ def auth():
         data = {
             "name": reg_input_username,
             "email": reg_input_email,
-            "password": reg_input_password
+            "password": reg_input_password,
         }
 
         sign_up_controller = auth_controller.SignUpController(data)
@@ -58,43 +57,46 @@ def auth():
         if registr_user["registr_result"]:
             print("signed up")
             login_user(registr_user["user"])
-            return redirect('/')
+            return redirect("/")
         return redirect("/auth")
 
     if login_form.validate_on_submit():
         input_email = login_form.email.data
         input_password = login_form.password.data
 
-        login_controller = auth_controller.LoginController(
-            input_email, input_password)
+        login_controller = auth_controller.LoginController(input_email, input_password)
 
         comparrison_result = login_controller.wrapper()
 
         if comparrison_result["comparrison_result"]:
             print("LOGGED IN")
             login_user(comparrison_result["user"])
-            return redirect('/')
+            return redirect("/")
 
         print("NOT LOGGED IN")
-        return redirect('/auth')
+        return redirect("/auth")
 
-    return render_template("other_templates/auth_page.html", sign_up_form=sign_up_form, login_form=login_form,
-                           title="Sign In")
+    return render_template(
+        "other_templates/auth_page.html",
+        sign_up_form=sign_up_form,
+        login_form=login_form,
+        title="Sign In",
+    )
 
 
-@app.route('/logout')
+@app.route("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect("/")
 
 
-@app.route("/creators", methods=['POST', 'GET'])
+@app.route("/creators", methods=["POST", "GET"])
 def creators():
-    if request.method == 'GET':
+    if request.method == "GET":
         return render_template("creators_template/creators_page.html", title="Creators")
-    elif request.method == 'POST':
-        resume_file = request.files['file']
+    elif request.method == "POST":
+        resume_file = request.files["file"]
 
         name = resume_file.filename
         resume_file.save(f"resumes/{name}")
@@ -115,7 +117,11 @@ def cards():
     debit_controller = debit_cards_controller.Debit(filter_type=filter_type)
     render_data = debit_controller.generate_cards()
 
-    return render_template("cards_templates/debit_cards_page.html", title="Debit cards", render_data=render_data)
+    return render_template(
+        "cards_templates/debit_cards_page.html",
+        title="Debit cards",
+        render_data=render_data,
+    )
 
 
 @app.route("/credit-card", methods=["GET"])
@@ -127,7 +133,11 @@ def credit_cards():
     credit_controller = credit_cards_controller.Credit(filter_type=filter_type)
     render_data = credit_controller.generate_cards()
 
-    return render_template("cards_templates/credit_cards_page.html", title="Credit cards", render_data=render_data)
+    return render_template(
+        "cards_templates/credit_cards_page.html",
+        title="Credit cards",
+        render_data=render_data,
+    )
 
 
 # if __name__ == '__main__':

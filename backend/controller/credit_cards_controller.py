@@ -33,8 +33,9 @@ class Credit:
         bank_name = self.filter_type[5:]
         print(bank_name)
 
-        db_response = self.db_sess.query(
-            CreditCards).filter(CreditCards.bank_name == bank_name)
+        db_response = self.db_sess.query(CreditCards).filter(
+            CreditCards.bank_name == bank_name
+        )
 
         response = self.format_responce(db_response)
         return response
@@ -42,15 +43,18 @@ class Credit:
     def get_fast_filter_cards_data(self):
         if self.filter_type == "lowest_fee":
             db_response = self.db_sess.query(CreditCards).filter(
-                CreditCards.annual_fee == 0)
+                CreditCards.annual_fee == 0
+            )
 
         if self.filter_type == "best_cashback":
             db_response = self.db_sess.query(CreditCards).filter(
-                CreditCards.cashback > 3)
+                CreditCards.cashback > 3
+            )
 
         if self.filter_type == "lowest_APR":
             db_response = self.db_sess.query(CreditCards).filter(
-                CreditCards.regular_apr == 0)
+                CreditCards.regular_apr == 0
+            )
 
         response = self.format_responce(db_response)
         return response

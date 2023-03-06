@@ -31,8 +31,9 @@ class Debit:
         bank_name = self.filter_type[5:]
         print(bank_name)
 
-        db_response = self.db_sess.query(
-            DebitCards).filter(DebitCards.bank_name == bank_name)
+        db_response = self.db_sess.query(DebitCards).filter(
+            DebitCards.bank_name == bank_name
+        )
 
         response = self.format_responce(db_response)
         return response
