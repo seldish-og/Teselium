@@ -17,7 +17,7 @@ def global_init(db_file):
     if not db_file or not db_file.strip():
         raise Exception("Db not found")
 
-    conn_str = f"sqlite:///{db_file.strip()}?check_same_thread=False"
+    conn_str = f"sqlite:///{db_file.strip()}"
     print(f"Connecting to {conn_str}")
 
     engine = sa.create_engine(conn_str, echo=False)
