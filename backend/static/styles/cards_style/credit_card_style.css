@@ -1,0 +1,345 @@
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* CARDS*/
+  .cards-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 10px;
+    /* margin-left: 200px; */
+    height: 100%;
+    background-color: #fff347;
+  }
+  
+  .card {
+    border: 2px solid black;
+  
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+  
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .left_card_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    float: left;
+  }
+  
+  .left_card_container img {
+    max-width: 250px;
+    max-height: 150px;
+    margin: 20px;
+  }
+  
+  .left_card_container span {
+    padding: 9px 18px;
+    font-size: 100%;
+    border-radius: 19px;
+    
+    background: #070d59;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .left_card_container span:hover {
+    background: #333ba8;
+    cursor: pointer;
+  }
+  
+  .right_card_container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .right_card_container h3 {
+    margin: 10px;
+    font-size: 20px;
+  }
+  .description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 200px;
+  }
+  
+  .description-item {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+  
+  .description-container p {
+    width: 30%;
+    min-width: 200px;
+    padding: 5px;
+  
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 16px;
+  
+    color: #565959;
+    border-bottom: 1px solid #d8d9da;
+  }
+  
+  .description-container span {
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem;
+    padding: 5px;
+  
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 16px;
+  
+    color: #000;
+    border-bottom: 1px solid #d8d9da;
+  }
+  
+  /* //// CARDS */
+  /* filter main */
+  
+  .filter-container {
+    background-color: rgb(22, 162, 255);
+    padding: 5px;
+    margin: 10px;
+    max-width: 300px;
+    color: #070d59;
+    height: 100%;
+  }
+  
+  .filter-header {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px solid black;
+  }
+  
+  .header-text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+  
+  .top-categories-header {
+    margin: 15px 10px 10px 10px;
+  }
+  
+  /* ////filter main */
+  
+  /* top filters */
+  
+  .top-filters-list {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .top-filters-list li {
+    margin: 10px;
+    padding: 5px 7px;
+    min-width: 44px;
+    width: fit-content;
+  
+    background-color: #d4e1f1;
+    color: #070d59;
+    border-radius: 7px;
+  
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+  
+    cursor: pointer;
+  }
+  
+  .top-filters-list li:hover {
+    color: #fff;
+    background-color: #070d59;
+  }
+  
+  /* ////top filters */
+  
+  /* custom filters */
+  
+  .custom-filter-header {
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .annuel-fee,
+  .credit-score,
+  .apr,
+  .cashback,
+  .banks-filter-h {
+    margin: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  /* amazon test input*/
+  .am-input-container {
+    margin: 10px;
+    margin-top: 0px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    color: #070d59;
+    box-sizing: border-box;
+  }
+  
+  .dollar-input-field {
+    padding-left: 9px;
+    position: absolute;
+    margin-top: 5px;
+    line-height: 30px;
+    font-size: 100%;
+  }
+  
+  .input-text {
+    background-color: #fff;
+    height: 31px;
+    padding: 3px 7px;
+    line-height: normal;
+    border: 1px solid #070d59;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+    outline: 0;
+    margin-top: 4px;
+    margin-right: 2px;
+    width: 78px;
+    padding-left: 23px;
+  }
+  
+  .input-button:not(.a-button-toggle) {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+  }
+  
+  .input-button {
+    background: #d4e1f1;
+    color: #070d59;
+    border-radius: 3px;
+    border-color: #070d59;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    text-decoration: none !important;
+    vertical-align: middle;
+    margin-top: 4px !important;
+    margin-bottom: 7px;
+  }
+  
+  .input-button:hover {
+    background-color: #070d59;
+    color: #fff;
+  }
+  
+  .a-button-inner {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 29px;
+    border-radius: 2px;
+  }
+  
+  .a-button-input {
+    position: absolute;
+    background-color: transparent;
+    color: transparent;
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.01;
+    outline: 0;
+    overflow: visible;
+    z-index: 20;
+  }
+  
+  .a-button-text {
+    background-color: transparent;
+    border: 0;
+    display: block;
+    font-size: 13px;
+    line-height: 29px;
+    margin: 0;
+    outline: 0;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .a-button-text:hover {
+    color: #d4e1f1;
+    background-color: #070d59;
+  }
+  
+  /* ////amazon test input*/
+  
+  /* banks list */
+  .banks-filter-list {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .banks-filter-list li {
+    margin: 9px;
+    padding: 5px 7px;
+    min-width: 44px;
+    width: fit-content;
+  
+    background-color: #d4e1f1;
+    color: #070d59;
+    border-radius: 7px;
+  
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+  
+    cursor: pointer;
+  }
+  
+  .banks-filter-list li:hover {
+    color: #fff;
+    background-color: #070d59;
+  }
+
+  .complete-button button {
+    cursor: pointer;
+    padding: 9px 38px;
+    font-size: 100%;
+    background: #070d59;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 19px;
+    margin: 25px 10px 25px 10px;
+  }
+  
+  .complete-button button:hover{
+    background: #333ba8;
+    color: #fff;
+  }
+  /* ////banks list */
+  
+  /* ////custom filters */
+  .bg {
+    background-color: white !important;
+  }
+  /* 

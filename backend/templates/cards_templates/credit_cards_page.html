@@ -1,0 +1,142 @@
+{% extends "main_templates/header_and_footer.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href={{ url_for('static', filename='styles/cards_style/credit_card_style.css' ) }}>
+{% endblock %}
+
+{% block content %}
+
+<section class="main-result-page">
+    <form class="main-result-page" name="filter_form">
+        <div class="main-container">
+            <div class="filter-container bg">
+                <div class="main">
+                    <div class="filter-header bg">
+                        <span class="header-text" style="font-size: 20px;">FILTER</span>
+                    </div>
+
+                    <div class="top-categories-header bg">
+                        <span class="header-text">Top Categories</span>
+                    </div>
+
+                    <div class="top-filters-container bg">
+                        <ul class="top-filters-list bg">
+                            <a href="/credit-card?filter_type=lowest_fee">
+                                <li>Lowest Fee</li>
+                            </a>
+                            <a href="/credit-card?filter_type=best_cashback">
+                                <li>Best Cashback</li>
+                            </a>
+                            <a href="/credit-card?filter_type=lowest_APR">
+                                <li>Lowest APR</li>
+                            </a>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="custom-filter-container">
+                    <div class="custom-filter-header bg">
+                        <span class="header-text">Custom</span>
+                    </div>
+
+                    <div class="banks-filter-container bg">
+                        <span class="banks-filter-h">banks:</span>
+                        <ul class="banks-filter-list">
+                            <a href="/credit-card?filter_type=bank-Bank-of-America">
+                                <li>Bank of America</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Capital-One-360">
+                                <li>capital one 360</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Citibank">
+                                <li>citibank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Fifth-Third-Bank">
+                                <li>fifth third bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-HSBC">
+                                <li>HSBC</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Chase">
+                                <li>JP chase</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-PNC-Bank">
+                                <li>PNC</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Santander">
+                                <li>santander</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-TD-Bank">
+                                <li>TD bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Truist-Bank">
+                                <li>truist bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-US-Bank">
+                                <li>US bank</li>
+                            </a>
+                            <a href="/credit-card?filter_type=bank-Wells-Fargo">
+                                <li>wells fargo</li>
+                            </a>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="cards-container bg">
+                {% for card in render_data %}
+                <div class="card">
+                    <div class="left_card_container">
+                        <img src=static/{{ card["img_path"] }} alt="card image">
+                        <a href={{ card["link_to_bank"] }}">
+                        <span>Apply</span>
+                        </a>
+                    </div>
+
+                    <div class="right_card_container">
+                        <h3>{{ card["card_name"] }}</h3>
+                        <div class="description-container">
+                            <div class="description-item">
+                                <p>Cashback</p>
+                                <span>{{ card["cashback"] }} %</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Annual Fee</p>
+                                <span>{{ card["annual_fee"] }} $</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Credit Score</p>
+                                <span>~{{ card["credit_score"] }}</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Network</p>
+                                <span>{{ card["network"] }}</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Regular APR</p>
+                                <span>{{ card["regular_apr"] }} %</span>
+                            </div>
+                            <div class="description-item">
+                                <p>Bank</p>
+                                <span>{{ card["bank_name"] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </form>
+</section>
+{% endblock %}
+
+{% block script %}
+<script src={{ url_for('static', filename='scripts/credit_filter_form.js' ) }}></script>
+{% endblock %}

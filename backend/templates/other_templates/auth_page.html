@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+    <link rel="stylesheet" href={{ url_for(
+    'static', filename='styles/other_styles/auth_style.css' ) }}>
+
+</head>
+
+<body>
+<!-- partial:index.partial.html -->
+<div class="logo" target="_blank">
+    <a href="/">
+        <img src={{ url_for('static', filename='images/main_images/logo.png' ) }} alt="">
+    </a>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row full-height justify-content-center">
+            <div class="col-12 text-center align-self-center py-5">
+                <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                    <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                    <label for="reg-log"></label>
+                    <div class="card-3d-wrap mx-auto">
+                        <div class="card-3d-wrapper">
+                            <div class="card-front">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+                                        <h4 class="mb-4 pb-3 log-in-color">Log In</h4>
+
+                                        {% block content %}
+                                        <form action="" method="post" novalidate>
+                                            {{ login_form.hidden_tag() }}
+                                            <div class="form-group">
+
+                                                {{ login_form.email.input }}
+                                                {{ login_form.email(type="email", class="form-style input",
+                                                placeholder="Your Email", autocomplete="off") }}
+
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+
+                                                {{ login_form.password.input }}
+                                                {{ login_form.password(type="password", class="form-style input",
+                                                placeholder="Your Password", autocomplete="off") }}
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            {{ login_form.password.button }}
+                                            {{ login_form.submit(type="submit", class="btn mt-4") }}
+                                        </form>
+                                        {% endblock %}
+                                        <!-- <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
+                                                password?</a></p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+                                        <h4 class="mb-4 pb-3 log-in-color">Sign Up</h4>
+
+                                        {% block content2 %}
+                                        <form action="" method="post" novalidate>
+                                            {{ sign_up_form.hidden_tag() }}
+
+                                            <div class="form-group">
+                                                {{ sign_up_form.username.input }}
+                                                {{ sign_up_form.username(type="username", class="form-style input",
+                                                placeholder="Your Name", autocomplete="off") }}
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+
+                                            <div class="form-group mt-2">
+                                                {{ sign_up_form.email.input }}
+                                                {{ sign_up_form.email(type="email", class="form-style input",
+                                                placeholder="Your Email", autocomplete="off") }}
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+
+                                            <div class="form-group mt-2">
+                                                {{ sign_up_form.password.input }}
+                                                {{ sign_up_form.password(type="password", class="form-style input",
+                                                placeholder="Your Password", autocomplete="off") }}
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            {{ sign_up_form.submitt.button }}
+                                            {{ sign_up_form.submitt(type="submit", class="btn mt-4") }}
+                                        </form>
+                                        {% endblock %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

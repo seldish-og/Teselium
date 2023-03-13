@@ -1,0 +1,68 @@
+{% extends "main_templates/header_and_footer.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href={{ url_for('static', filename='styles/creators_style/creators_style.css' ) }}>
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="container">
+        <div class="info">
+            <img src={{ url_for('static', filename='images/other_images/face_img.jpg' ) }} alt="тут моя фотка"
+            class="avatar" />
+
+            <div class="info-text">
+                <h1>Seldish-og</h1>
+                <p>Python Developer</p>
+
+                <h4>My contacs:</h4>
+
+                <a href="github.com/seldish-og" target="_blank">Github</a>
+            </div>
+
+        </div>
+
+        <div class="card bg-yellow">
+            <h2>Projects</h2>
+            <ol class="list">
+                <li>Teselium</li>
+                <li>Dark-Knife</li>
+                <li>InstaLoaderPro</li>
+            </ol>
+        </div>
+
+
+        <div class="card bg-green">
+            <h2>Work Expirience</h2>
+            <table class="table">
+                <tr>
+                    <td>Freelance</td>
+                    <td>Scripts, Backend</td>
+                    <td>2020 - 2022</td>
+                </tr>
+
+            </table>
+        </div>
+
+
+    </div>
+
+    <div class="join-us-container">
+        <div class="join-header">
+            Join us
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="photo">Send your resume</label>
+                <input type="file" class="form-control-file" id="photo" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary">send</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

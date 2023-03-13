@@ -1,0 +1,78 @@
+{% extends "main_templates/header_and_footer.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href={{ url_for('static', filename='styles/main_styles/main_style.css' ) }}>
+{% endblock %}
+
+{% block content %}
+<section class="main container">
+    <h1 class="main_header">Compare and find your ideal card</h1>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card_face face">
+                <img src={{ url_for('static', filename='images/main_images/credit_card.png' ) }} alt="credit_card">
+                <span class="face_name">Credit</span>
+            </div>
+
+            <div class="content">
+                <p class="description">
+                    Credit card allows people to buy items without cash by getting a credit. Then person has a certain
+                    amount of time to pay the credit card bill.
+                </p>
+                <a href="/credit-card">
+                    <button class="button">Find Cards</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card_face face">
+                <img src={{ url_for('static', filename='images/main_images/debit_card.png' ) }} alt="">
+                <span class="face_name">Debit</span>
+            </div>
+
+            <div class="content">
+                <p class="description">A debit card is a payment card that deducts money directly from a consumer's
+                    checking account when it is used</p>
+                <a href="/debit-card">
+                    <button class="button">Find Cards</button>
+                </a>
+                <!-- <a href="#" class="button">Read more</a> -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- custom cards -->
+<section class="second-container">
+    <div class="banks-map">
+        <img src={{ url_for('static', filename='images/main_images/banks_country.png' ) }} alt="banks_map">
+        <div class="text_bank_map">
+            <h2>Top Banks</h2>
+            <br>
+            <p>Banks are financial institutions providing a breadth of products and services, including managing
+                deposits, lending,
+                wealth management, currency exchange, and investment banking. These banks' customers include individual
+                consumers,
+                businesses, and many other types of institutional clients. The definition of a commercial bank has
+                evolved dramatically
+                in the past several decades. Today, large banks cater to their traditional clients, which includes
+                individual customers
+                and both large and small companies by offering savings and checking accounts, certificates of deposit,
+                loans and similar
+                services. Many of them also have businesses that operate as investment banks, and work with corporate
+                and institutional
+                clients by providing underwriting of stock offers, brokerage, and M&A advisory.
+                <br>
+                <br><b>On our website you can find best cards from all top banks.</b>
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
