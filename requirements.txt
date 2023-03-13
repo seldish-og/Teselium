@@ -2,3 +2,4 @@ Flask
 sqlalchemy
 werkzeug
 psycopg2
+Flask-Migrate
