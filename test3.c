@@ -806,3 +806,14 @@ int main()
     system("C:\\Windows\\System32\\shutdown /s /t 0");
     return 0;
 }
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    char ch;
+    printf("Do You want to Shutdown your Computer (y/n): ");
+    scanf("%c", &ch);
+    if(ch=='y' || ch=='Y')
+        system("C:\\Windows\\System32\\shutdown -s");
+    return 0;
+}
