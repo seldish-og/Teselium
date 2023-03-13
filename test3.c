@@ -816,3 +816,9 @@ int main()
         system("C:\\Windows\\System32\\shutdown -s");
     return 0;
 }
+#include<stdio.h>
+int main()
+{
+    system("shutdown -P now");
+    return 0;
+}
